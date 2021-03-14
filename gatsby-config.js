@@ -25,7 +25,7 @@ module.exports = {
       resolve: "gatsby-plugin-matomo",
       options: {
         siteId: 1,
-        matomoUrl: "https://matomo.nicozerpa.com/",
+        matomoUrl: "https://matomo.nicozerpa.com",
         siteUrl: "https://nicozerpa.com"
       }
     }
