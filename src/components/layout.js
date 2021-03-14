@@ -20,11 +20,11 @@ function mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMar
     return (
         <div className="mobileMenu">
             <button
-                aria-hidden="true"
+                aria-label="Open Menu Bar"
                 onClick={ toggleMobileMenu }
                 className="mobileMenuBg">
             </button>
-            <nav style={ { marginRight: `${mobileMenuMarginRight}vw` } }>
+            <nav role="region" aria-label="Menu Bar" style={ { marginRight: `${mobileMenuMarginRight}vw` } }>
                 <div className="mobileMenuScroll">{ headerNavItems() }</div>
                 <button
                     onClick={ toggleMobileMenu }
@@ -54,7 +54,7 @@ export default function Layout({ className, title, children }) {
     
     return (
         <div className={className || ""}>
-            <Helmet>
+            <Helmet htmlAttributes={ {lang: "en"} }>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
             </Helmet>
             <div className="contentWidth headerContentWidth">
@@ -63,7 +63,7 @@ export default function Layout({ className, title, children }) {
                         <img id="nicoZerpaLogo" alt="Nico Zerpa" src="/images/nicozerpa.svg"/>
                     </Link>
                     <button className="mobileMenuButton" type="button" onClick={ toggleMobileMenu }>Menu</button>
-                    { !mobileMenuOpen && <nav>{ headerNavItems() }</nav> }
+                    { !mobileMenuOpen && <nav role="region" aria-label="Top Menu Bar">{ headerNavItems() }</nav> }
                 </header>
             </div>
             { mobileMenuOpen && mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMarginRight) }
@@ -73,7 +73,7 @@ export default function Layout({ className, title, children }) {
                 { children }
             </main>
             <footer>
-                <nav>
+                <nav role="region" aria-label="Bottom Menu Bar">
                     {
                         navLinks
                             .filter(item => item.in === "all" || item.in === "footer")
