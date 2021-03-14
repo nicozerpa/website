@@ -52,8 +52,6 @@ export default function Layout({ className, title, children }) {
         setMobileMenuMarginRight(!mobileMenuOpen ? -45 : 0)
     }
     
-    const headerNavItemsOutput = mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMarginRight);
-
     return (
         <div className={className || ""}>
             <Helmet>
@@ -65,10 +63,10 @@ export default function Layout({ className, title, children }) {
                         <img id="nicoZerpaLogo" alt="Nico Zerpa" src="/images/nicozerpa.svg"/>
                     </Link>
                     <button className="mobileMenuButton" type="button" onClick={ toggleMobileMenu }>Menu</button>
-                    { !mobileMenuOpen && <nav>{ headerNavItemsOutput }</nav> }
+                    { !mobileMenuOpen && <nav>{ headerNavItems() }</nav> }
                 </header>
             </div>
-            { mobileMenuOpen && headerNavItemsOutput }
+            { mobileMenuOpen && mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMarginRight) }
             
 
             <main>

@@ -26,9 +26,10 @@ export default function PrivacyPolicy() {
                     
                     <h3>Analytics</h3>
                     <p>This site uses a third party service, <a rel="noreferrer noopener" href="https://matomo.org/" target="_blank">Matomo</a>, in order to measure visitors and track the site traffic. When you visit my website, Matomo might obtain data that could be considered as personal information.</p>
-                    <p>You can opt-out of Matomo tracking here:</p>
+                    <p>You can opt-out of Matomo tracking below:</p>
 
                     <iframe
+                        title="Matomo opt-out page"
                         style={ {border: "1px solid #999", height: "200px", width: "90vw", maxWidth: "35rem"} }
                         src="https://matomo.nicozerpa.com/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=en&amp;backgroundColor=ffffff&amp;fontColor=&amp;fontSize=&amp;fontFamily=sans-serif"/>
 
