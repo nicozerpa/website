@@ -1,0 +1,554 @@
+$bgColor: hal(0, 0%, 99%);
+$fgColor: hsl(0, 0%, 30%);
+$brandColor1: #db4c40;
+$brandColor2: #f0c987;
+$brandColor3: #f2f2f2;
+$brandColor4: #495867;
+$brandColor5: #e6e6e6;
+
+
+@mixin mobileStyles {
+    @media screen and (max-width: 736px) { @content; }
+}
+
+:root {
+    background-color: $bgColor;
+    color: $fgColor;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 20px;
+	font-weight: 300;
+	line-height: 150%;
+    margin: 0px;
+}
+body {
+    margin: 0px;
+}
+a[href] {
+    font-weight: bold;
+    color: $brandColor1;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: lighten($brandColor1, 5%);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: "Metropolis", sans-serif; }
+
+code {
+    display: inline-block;
+    vertical-align: middle;
+    color: $brandColor1;
+    background-color: $brandColor3;
+    font-size: 85%;
+    line-height: 1.1em;
+    padding: 0.1em;
+    border-radius: 2px;
+    border: 1px solid darken($brandColor3, 5%);
+}
+
+@mixin contentWidth {
+    width: 90vw;
+    max-width: 57rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contentWidth {
+    @include contentWidth;
+}
+.textContentWidth {
+    max-width: 35rem;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobileStyles {
+        a[href] {
+            word-wrap: break-word;
+        }
+    }
+}
+.button {
+    font-family: "Metropolis", sans-serif;
+    font-weight: bold;
+    font-size: 0.725rem;
+    line-height: 1.25rem;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $brandColor4;
+    color: #FFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.35rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: lighten($brandColor4, 5%);
+    }
+    &:active {
+        background-color: darken($brandColor4, 5%);
+    }
+}
+a.button[href] { color: #FFF; }
+
+nav {
+    font-family: Metropolis, sans-serif;
+    font-size: 0.725rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    a[href] {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1.5rem;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+
+    img#nicoZerpaLogo {
+        width: 10rem;
+        height: 3.75rem;
+        border-radius: 10rem;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+
+        @include mobileStyles {
+            width: 40vw;
+            height: calc(40vw * 0.375);
+            
+            max-width: 10rem;
+            max-height: 3.75rem;
+        }
+    }
+    .mobileMenuButton { display: none; }
+    nav { margin-left: 1.5rem; }
+    .mobileMenuBg { display: none; }
+    .mobileCloseMenu { display: none; }
+
+    @include mobileStyles {
+        .mobileMenuButton {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            padding: 0px;
+            border: none;
+            background-color: transparent;
+            background-image: url("/images/hamburger.svg");
+            background-size: 1.5rem 1.5rem;
+            overflow: hidden;
+            text-indent: -10000px;
+            white-space: nowrap;
+        }
+        nav { display: none; }
+    }
+}
+@include mobileStyles {
+    .mobileMenu {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+
+        .mobileMenuBg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            background-color: hsla(0, 0%, 0%, 10%);
+            border: none;
+            padding: 0px;
+        }
+
+        nav {
+            position: absolute;
+            z-index: 2;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            padding-top: 1rem;
+            box-shadow: 0 0 1.5rem rgb(0 0 0 / 30%);
+            background-color: #FFF;
+            display: block;
+            min-width: 45vw;
+            transition: margin-right 0.25s;
+            margin-right: -45vw;
+
+            div.mobileMenuScroll {
+                position: absolute;
+                padding-top: 1rem;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                height: calc(100vh - 1rem);
+                overflow: auto;
+            }
+
+            a[href] {
+                display: block;
+                padding: 0.5em;
+                margin-left: 2em;
+                white-space: nowrap;
+                margin-right: 2em;
+            }
+
+            .mobileCloseMenu {
+                position: absolute;
+                display: block;
+                z-index: 2;
+                top: 2em;
+                margin-left: -2.2rem;
+                border: none;
+                background-image: url("/images/close.svg");
+                background-repeat: no-repeat;
+                background-size: .75rem .75rem;
+                background-position: center;
+                border-radius: 1.5rem;
+                background-color: #fff;
+                opacity: .7;
+                padding: 0;
+                overflow: hidden;
+                text-indent: 10000px;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}
+
+
+footer {
+    border-top: 1px solid #ccc;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    padding-top: 1.5rem;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    nav {
+        margin-bottom: 1.5rem;
+
+        @include mobileStyles {
+            a[href] {
+                display: block;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+
+    #emailFooterButton {
+        width: 147px;
+        height: 14px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0px 0px 0px .5ex;
+        margin-top: -1.5px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            #emailFooterImage {
+                outline: 1px dotted black;
+            }
+        }
+    }
+    #emailFooterImage {
+        width: 147px;
+        height: 14px;
+        display: block;
+    }
+}
+
+.newsletterForm {
+    background-color: $brandColor3;
+    padding: 1.5rem;
+    width: calc(90vw - 3rem);
+    max-width: calc(35rem - 3rem);
+    border-radius: .25rem;
+    box-shadow: 0 0 0.5rem $brandColor3;
+    margin-bottom: 2em;
+    font-size: 90%;
+    line-height: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+
+    h3 {
+        color: $brandColor1;
+        margin-top: 0px;
+    }
+
+    .newsletterFormFields {
+        display: table;
+        margin-bottom: 0.5rem;
+
+        @include mobileStyles {
+            display: block;
+        }
+
+        .newsletterFormFieldRow {
+            display: table-row;
+
+            @include mobileStyles {
+                display: block;
+                margin-bottom: 1rem;
+            }
+
+            > * {
+                display: table-cell;
+                vertical-align: middle;
+
+                @include mobileStyles {
+                    display: block;
+                }
+            }
+
+            .newsletterFormLabel {
+                width: 1%;
+                padding-right: 1em;
+                white-space: nowrap;
+                padding-bottom: 0.5em;
+                padding-top: 0.5em;
+
+                @include mobileStyles {
+                    width: auto;
+                }
+            }
+        }
+
+        input {
+            transition: border-color .3s;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: .25em;
+            border: 1px solid #e3e3e3;
+            font-weight: 300;
+            color: #222;
+            display: block;
+            font-family: Nunito Sans,sans-serif;
+            font-size: .725rem;
+            height: auto;
+            letter-spacing: .02em;
+            line-height: 2.2em;
+            outline: none;
+            padding: 0 .5em;
+            width: 100%;
+
+            &:focus {
+                border-color: #495867;
+                border-width: 2px;
+                line-height: calc(2.2em - 2px);
+            }
+        }
+    }
+
+    .newsletterFormButtons { text-align: center; }
+}
+@mixin pageH1 {
+    @include contentWidth;
+    text-align: center;
+    font-size: 3.33rem;
+    line-height: 110%;
+    letter-spacing: -0.025em;
+    background-color: $brandColor1;
+    color: $brandColor2;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    background-image: url("/images/nzbg-repeat-white.svg");
+    background-position: center center;
+    border-radius: 5px;
+
+    @include mobileStyles {
+        font-size: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+div.homePage .headerContentWidth {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    header {
+        @include mobileStyles {
+            .mobileMenuButton {
+                background-image: url("/images/hamburger-home.svg");
+            }
+        }
+
+        nav {
+            a { color: #FFF; }
+        }
+    }
+}
+
+#heroBanner {
+    background-color: $brandColor1;
+    background-image: url("/images/corner-01-top-left.svg"),
+                      url("/images/corner-01-bottom-right.svg"),
+                      url("data:image/gif;base64,R0lGODdhAQABAIABANtMQAAAACwAAAAAAQABAAACAkQBADs=");
+    background-size: auto auto, auto auto, 100vw 100vh;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: left -20px top -20px, right -20px bottom -20px, center top;
+
+    color: $brandColor5;
+    font-family: Metropolis, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 115%;
+    letter-spacing: -0.025em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 11rem 2rem 8rem 2rem;
+    margin-bottom: 3rem;
+
+    @include mobileStyles {
+        font-size: 1.2rem;
+    }
+
+    .heroContainer {
+        max-width: 1140px;
+
+        h1 {
+            font-size: 4rem;
+            color: $brandColor2;
+            line-height: 110%;
+            margin-top: 0rem;
+            margin-bottom: 1rem;
+
+            @include mobileStyles {
+                width: calc(100vw - 2rem);
+                font-size: 2.3rem;
+            }
+        }
+    }
+}
+.featuredArticles {
+    background-image: url("/images/corner-02-top-left.svg"), url("/images/corner-02-bottom-right.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -255px left -160px, bottom -210px right -222px;
+
+    background-color: $brandColor3;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem $brandColor3;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+
+    @include mobileStyles {
+        margin-left: -2.5vw;
+        margin-right: -2.5vw;
+    }
+
+    article {
+        h2 {
+            font-size: 1.17rem;
+            color: $brandColor1;
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+        a.readMore {
+            font-family: "Metropolis", sans-serif;
+            text-transform: uppercase;
+            color: $fgColor;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 70%;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &:after {
+            content: " ";
+            border-top: 1px solid rgba(200,200,200);
+            display: block;
+            width: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        &:last-child:after {
+            display: none;
+            content: "";
+        }
+    }
+}
+.readMoreArticles { text-align: center; }
+
+article.single {
+    h1 {
+        @include pageH1;
+    }
+    margin-bottom: 2rem;
+
+    h2, h3 { color: $brandColor1; }
+}
+.aboutMeImage {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 230px;
+    height: 230px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 230px;
+    overflow: hidden;                       
+}
+.articleList {
+    h1 {
+        @include pageH1;
+        margin-bottom: 3rem;
+    }
+    article {
+        margin-bottom: 3rem;
+    }
+    .pagination {
+        text-align: center;
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            margin: 0px 0.25em;
+
+            &:hover {
+                background-color: hsl(0, 0%, 95%);
+                border-radius: 3px;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;800&display=swap');
+
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-Thin.woff2") format("woff2"),
+        url("/fonts/Metropolis-Thin.woff") format("woff");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-ThinItalic.woff2") format("woff2"),
+        url("/fonts/Metropolis-ThinItalic.woff") format("woff");
+    font-style: italic;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-Medium.woff2") format("woff2"),
+        url("/fonts/Metropolis-Medium.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-MediumItalic.woff2") format("woff2"),
+        url("/fonts/Metropolis-MediumItalic.woff") format("woff");
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-Bold.woff2") format("woff2"),
+        url("/fonts/Metropolis-Bold.woff") format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: Metropolis;
+    src:
+        url("/fonts/Metropolis-BoldItalic.woff2") format("woff2"),
+        url("/fonts/Metropolis-BoldItalic.woff") format("woff");
+    font-style: italic;
+    font-weight: 700;
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="corner-01-top-left.svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 134.51785 134.51786"
+   height="508.41394"
+   width="508.41394">
+  <sodipodi:namedview
+     inkscape:current-layer="svg8"
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="261.23573"
+     inkscape:cx="120.66045"
+     inkscape:zoom="1.2804527"
+     showgrid="false"
+     id="namedview14"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs2">
+    <clipPath
+       id="clipPath1084"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="80.525337"
+         x="-54.283192"
+         height="134.51785"
+         width="134.51785"
+         id="rect1086"
+         style="opacity:0.5;fill:#b3b3b3;stroke:none;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath906">
+      <rect
+         y="0"
+         x="0"
+         height="135.42734"
+         width="134.78699"
+         id="rect908"
+         style="opacity:1;fill:#999999;stroke:none;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g875"
+     style="opacity:0.15;fill:none;stroke:#ffffff"
+     clip-path="url(#clipPath906)">
+    <path
+       id="path856-6"
+       style="opacity:1;fill:none;stroke:#ffffff;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000"
+       d="m -19.541068,115.06052 4.864308,4.86431 58.738899,-58.738897 a 3.4395849,3.4395849 0 0 0 3e-6,-4.8643 3.4395849,3.4395849 0 0 0 -4.86431,-10e-6 l -0.01974,0.0197 z" />
+    <path
+       id="rect833-2"
+       style="opacity:1;fill:none;stroke:#ffffff;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000"
+       d="m 42.283332,53.236123 a 5.556252,5.556252 0 0 1 3.275519,1.5888 5.556252,5.556252 0 0 1 1.588789,3.27551 l 72.69345,-72.69345 -4.86431,-4.864307 z" />
+    <path
+       id="path856-6-7"
+       style="opacity:1;fill:none;stroke:#ffffff;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000"
+       d="m -10.560787,124.04081 10.477031,10.47703 87.823428,-87.823427 c 2.692879,-2.69288 2.530523,-7.22125 -0.362625,-10.1144 -2.89315,-2.89315 -7.421527,-3.05551 -10.114407,-0.36263 l -0.03956,0.0396 z" />
+    <path
+       id="rect833-2-0"
+       style="opacity:1;fill:none;stroke:#ffffff;stroke-width:1.05833;paint-order:markers fill stroke;stop-color:#000000"
+       d="m 83.448339,30.031683 c 2.587782,0.39748 5.028619,1.64719 6.929257,3.54778 1.900585,1.90064 3.150293,4.34147 3.547774,6.92926 L 134.43409,-2e-6 123.95706,-10.477034 Z" />
+  </g>
+</svg>
