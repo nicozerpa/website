@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
                     <p>You can opt-out of Matomo tracking here:</p>
 
                     <iframe
-                        style={ {border: "none", height: "200px", width: "600px"} }
+                        style={ {border: "1px solid #999", height: "200px", width: "90vw", maxWidth: "35rem"} }
                         src="https://matomo.nicozerpa.com/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=en&amp;backgroundColor=ffffff&amp;fontColor=&amp;fontSize=&amp;fontFamily=sans-serif"/>
 
                     
