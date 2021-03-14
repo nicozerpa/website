@@ -20,6 +20,14 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet"
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-matomo",
+      options: {
+        siteId: 1,
+        matomoUrl: "https://matomo.nicozerpa.com/",
+        siteUrl: "https://nicozerpa.com"
+      }
+    }
   ],
 }
