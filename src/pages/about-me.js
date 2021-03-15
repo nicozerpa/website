@@ -14,6 +14,8 @@ export default function AboutMe() {
         myAge--;
     }
 
+    const ageInMs = ((new Date()) - (new Date("1989-12-24 00:00:00")));
+
     return (
         <Layout title="About Me">
             <article className="single">
@@ -30,9 +32,11 @@ export default function AboutMe() {
 
                 <div className="textContentWidth">
                     <p><strong>¡Hola!</strong> <span aria-label="Hand wawing emoji" role="img">👋</span> My name is
-                    Nico Zerpa. I’m a self-taught software developer based in Buenos Aires, Argentina. I’ve been
-                    coding since I was 13 years old (I’m { myAge } now), and professionally for 12 years and
-                    counting. JavaScript is one of the first languages I’ve ever learned.</p>
+                    Nico Zerpa. I’m a self-taught software developer based in Buenos Aires, Argentina.
+                    I’m {ageInMs} milliseconds of age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { myAge } years.</p>
+                    <p>I’ve been coding since I was 13 years old, and professionally for 12 years and counting.
+                    JavaScript is one of the first languages I’ve ever
+                    learned.</p>
 
                     <p>I love to explain complex things in simple terms, that’s why I want to help other
                         programmers (and aspiring programmers too) to understand one of the most important
