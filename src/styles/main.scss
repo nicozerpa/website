@@ -410,11 +410,10 @@ div.homePage .headerContentWidth {
 #heroBanner {
     background-color: $brandColor1;
     background-image: url("/images/corner-01-top-left.svg"),
-                      url("/images/corner-01-bottom-right.svg"),
-                      url("data:image/gif;base64,R0lGODdhAQABAIABANtMQAAAACwAAAAAAQABAAACAkQBADs=");
-    background-size: auto auto, auto auto, 100vw 100vh;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-position: left -20px top -20px, right -20px bottom -20px, center top;
+                      url("/images/corner-01-bottom-right.svg");
+    background-size: auto auto, auto auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left -20px top -20px, right -20px bottom -20px;
 
     color: $brandColor5;
     font-family: Metropolis, sans-serif;

@@ -19,11 +19,12 @@ function mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMar
     }, 50);
     return (
         <div className="mobileMenu">
-            <button
-                aria-label="Open Menu Bar"
+            <div
+                aria-hidden="true"
                 onClick={ toggleMobileMenu }
+                onKeyPress={ toggleMobileMenu }
                 className="mobileMenuBg">
-            </button>
+            </div>
             <nav role="region" aria-label="Menu Bar" style={ { marginRight: `${mobileMenuMarginRight}vw` } }>
                 <div className="mobileMenuScroll">{ headerNavItems() }</div>
                 <button
