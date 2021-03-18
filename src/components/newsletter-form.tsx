@@ -1,7 +1,12 @@
 import React from "react"
 
-export default function NewsletterForm(props) {
-    const includeCopy = props.hasOwnProperty("includeCopy") ? props.includeCopy : true;
+interface NewsletterFormProps {
+    includeCopy ?: boolean
+}
+
+
+
+export default function NewsletterForm({ includeCopy = true } : NewsletterFormProps) {
 
     return (
         <form
@@ -16,15 +21,15 @@ export default function NewsletterForm(props) {
             <div className="newsletterFormFields">
                 <label className="newsletterFormFieldRow">
                     <span className="newsletterFormLabel">First Name *</span>
-                    <input type="text" name="FNAME" required="required"/>
+                    <input type="text" name="FNAME" required={ true }/>
                 </label>
                 <label className="newsletterFormFieldRow">
                     <span className="newsletterFormLabel">Email Address *</span>
-                    <input type="email" name="EMAIL" required="required"/>
+                    <input type="email" name="EMAIL" required={ true }/>
                 </label>
             </div>
             <div style={ {position: "absolute", left: "-5000px"} } aria-hidden="true">
-                <input type="text" name="b_ec0f3452bbe2aefc374876e6c_231939e8e0" tabIndex="-1" defaultValue=""/>
+                <input type="text" name="b_ec0f3452bbe2aefc374876e6c_231939e8e0" tabIndex={ -1 } defaultValue=""/>
             </div>
             
             <div className="newsletterFormButtons">

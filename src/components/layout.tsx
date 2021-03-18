@@ -13,7 +13,7 @@ function headerNavItems() {
             .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
 }
 
-function mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMarginRight) {
+function mobileNavMenu(toggleMobileMenu: any, mobileMenuMarginRight: number, setMobileMenuMarginRight) {
     setTimeout(() => {
         setMobileMenuMarginRight(0)
     }, 50);
@@ -36,19 +36,27 @@ function mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMar
     )
 }
 
-export default function Layout({ className, title, children }) {
-    
-    let copyrightYear = 2021;
-    const currentYear = (new Date()).getFullYear();
+interface LayoutProps {
+    className ?: string,
+    title ?: string,
+    children ?: React.ReactNode
+}
+
+export default function Layout({ className, title, children }: LayoutProps) {
+
+    const copyrightYear : number = 2021;
+    const currentYear : number = (new Date()).getFullYear();
+
+    let copyrightString : string = `${copyrightYear}`
 
     if (copyrightYear !== currentYear) {
-        copyrightYear += `-${currentYear}`
+        copyrightString += `-${currentYear}`
     }
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [mobileMenuMarginRight, setMobileMenuMarginRight] = useState(-45)
 
-    const toggleMobileMenu = function() {
+    const toggleMobileMenu = function() : void {
         setMobileMenuOpen(!mobileMenuOpen)
         setMobileMenuMarginRight(!mobileMenuOpen ? -45 : 0)
     }
@@ -81,7 +89,7 @@ export default function Layout({ className, title, children }) {
                             .map(item => <Link key={ item.url } to={ item.url }>{ item.label }</Link>)
                     }
                 </nav>
-                <div>© { copyrightYear } Nico Zerpa. All rights reserved.</div>
+                <div>© { copyrightString } Nico Zerpa. All rights reserved.</div>
                 <div>
                     You can get in touch with me at:
                     <button onClick={ contactEmail } id="emailFooterButton" type="button">

@@ -4,17 +4,17 @@ import Layout from "../components/layout"
 
 export default function AboutMe() {
     
-    const now = new Date();
-    const nowYear = now.getFullYear();
-    const nowMonthDay = (now.getMonth() + 1) * 100 + now.getDay();
+    const now : Date = new Date();
+    const nowYear : number = now.getFullYear();
+    const nowMonthDay : number = (now.getMonth() + 1) * 100 + now.getDay()
 
-    let myAge = nowYear - 1989;
+    let myAge : number = nowYear - 1989;
 
     if (nowMonthDay < 1224) {
         myAge--;
     }
 
-    const ageInMs = ((new Date()) - (new Date("1989-12-24 00:00:00")));
+    const ageInMs : number = (new Date()).getTime() - (new Date("1989-12-24 00:00:00")).getTime()
 
     return (
         <Layout title="About Me">
