@@ -1,39 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import navLinks from "../resources/navbar.js"
 import { Helmet } from "react-helmet"
 
 function contactEmail() {
     window.location.href = "mailto:nico@nicozerpa.com";
-}
-
-function headerNavItems() {
-    return navLinks
-            .filter(item => item.in === "all" || item.in === "header")
-            .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
-}
-
-function mobileNavMenu(toggleMobileMenu: any, mobileMenuMarginRight: number, setMobileMenuMarginRight) {
-    setTimeout(() => {
-        setMobileMenuMarginRight(0)
-    }, 50);
-    return (
-        <div className="mobileMenu">
-            <div
-                aria-hidden="true"
-                onClick={ toggleMobileMenu }
-                onKeyPress={ toggleMobileMenu }
-                className="mobileMenuBg">
-            </div>
-            <nav role="region" aria-label="Menu Bar" style={ { marginRight: `${mobileMenuMarginRight}vw` } }>
-                <div className="mobileMenuScroll">{ headerNavItems() }</div>
-                <button
-                    onClick={ toggleMobileMenu }
-                    className="mobileCloseMenu"
-                    type="button">Close</button>
-            </nav>
-        </div>
-    )
 }
 
 interface LayoutProps {
@@ -53,13 +24,9 @@ export default function Layout({ className, title, children }: LayoutProps) {
         copyrightString += `-${currentYear}`
     }
 
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [mobileMenuMarginRight, setMobileMenuMarginRight] = useState(-45)
-
-    const toggleMobileMenu = function() : void {
-        setMobileMenuOpen(!mobileMenuOpen)
-        setMobileMenuMarginRight(!mobileMenuOpen ? -45 : 0)
-    }
+    const navLinksContent : React.ReactNode = navLinks 
+            .filter(item => item.in === "all" || item.in === "header")
+            .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
     
     return (
         <div className={className || ""}>
@@ -71,11 +38,12 @@ export default function Layout({ className, title, children }: LayoutProps) {
                     <Link to="/">
                         <img id="nicoZerpaLogo" alt="Nico Zerpa" src="/images/nicozerpa.svg"/>
                     </Link>
-                    <button className="mobileMenuButton" type="button" onClick={ toggleMobileMenu }>Menu</button>
-                    { !mobileMenuOpen && <nav role="region" aria-label="Top Menu Bar">{ headerNavItems() }</nav> }
+                    <nav role="region" aria-label="Top Menu Bar">
+                        <button className="mobileMenuButton" type="button">Menu</button>
+                        <div className="mobileMenuContainer">{ navLinksContent }</div>
+                    </nav>
                 </header>
             </div>
-            { mobileMenuOpen && mobileNavMenu(toggleMobileMenu, mobileMenuMarginRight, setMobileMenuMarginRight) }
             
 
             <main>

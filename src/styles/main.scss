@@ -122,6 +122,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
+    position: relative;
 
     img#nicoZerpaLogo {
         width: 10rem;
@@ -138,27 +139,68 @@ header {
             max-height: 3.75rem;
         }
     }
-    .mobileMenuButton { display: none; }
-    nav { margin-left: 1.5rem; }
+    .mobileMenuButton {
+        display: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0px;
+        border: none;
+        background-color: transparent;
+        background-image: url("/images/hamburger.svg");
+        background-size: 1.5rem 1.5rem;
+        overflow: hidden;
+        text-indent: -10000px;
+        white-space: nowrap;
+
+        @include mobileStyles {
+            display: block;
+        }
+    }
+    nav {
+        margin-left: 1.5rem;
+
+        @include mobileStyles {
+            margin-left: 0px;
+        
+            .mobileMenuContainer {
+                position: absolute;
+                display: flex;
+                visibility: hidden;
+                background-color: #FFF;
+                right: 0px;
+                top: calc(50% + 1.5rem);
+                margin-left: 0px;
+                padding: 0.5rem;
+                box-shadow: 0px 0px 2.5vw rgba(0, 0, 0, 0.5);
+                flex-direction: column;
+                opacity: 0;
+                transition: opacity 0.25s, visibility 0s linear 0.25s;
+                
+                a[href] {
+                    padding: 0.25rem 1rem;
+                    margin: 1px;
+                    outline: none;
+
+                    &:hover, &:focus {
+                        background-color: rgba(0, 0, 0, 0.1);
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            &:focus-within .mobileMenuContainer {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.25s;
+            }
+        }
+    }
+
+    
     .mobileMenuBg { display: none; }
     .mobileCloseMenu { display: none; }
 
-    @include mobileStyles {
-        .mobileMenuButton {
-            display: block;
-            width: 1.5rem;
-            height: 1.5rem;
-            padding: 0px;
-            border: none;
-            background-color: transparent;
-            background-image: url("/images/hamburger.svg");
-            background-size: 1.5rem 1.5rem;
-            overflow: hidden;
-            text-indent: -10000px;
-            white-space: nowrap;
-        }
-        nav { display: none; }
-    }
+    
 }
 @include mobileStyles {
     .mobileMenu {
@@ -402,7 +444,12 @@ div.homePage .headerContentWidth {
         }
 
         nav {
-            a { color: #FFF; }
+            a {
+                color: #FFF;
+                @include mobileStyles {
+                    color: #000;
+                }
+            }
         }
     }
 }

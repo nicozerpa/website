@@ -2,7 +2,24 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 
-export default function Home({ data }) {
+interface HomeProps {
+    data : {
+        blog: {
+            posts: [{
+                frontmatter: {
+                    id: number,
+                    title: string
+                },
+                fields: {
+                    slug: string
+                },
+                excerpt: string
+            }]
+        }
+    }
+}
+
+export default function Home({ data } : HomeProps) {
     const { posts } = data.blog
 
     return (
