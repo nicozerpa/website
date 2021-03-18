@@ -11,6 +11,12 @@ $brandColor5: #e6e6e6;
     @media screen and (max-width: 736px) { @content; }
 }
 
+@mixin activeNav {
+    background-color:rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    color: $brandColor1;
+}
+
 :root {
     background-color: $bgColor;
     color: $fgColor;
@@ -182,8 +188,7 @@ header {
                     outline: none;
 
                     &:hover, &:focus {
-                        background-color: rgba(0, 0, 0, 0.1);
-                        border-radius: 5px;
+                        @include activeNav;
                     }
                 }
             }
@@ -192,86 +197,6 @@ header {
                 visibility: visible;
                 opacity: 1;
                 transition: opacity 0.25s;
-            }
-        }
-    }
-
-    
-    .mobileMenuBg { display: none; }
-    .mobileCloseMenu { display: none; }
-
-    
-}
-@include mobileStyles {
-    .mobileMenu {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-
-        .mobileMenuBg {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100vw;
-            height: 100vh;
-            background-color: hsla(0, 0%, 0%, 10%);
-            border: none;
-            padding: 0px;
-        }
-
-        nav {
-            position: absolute;
-            z-index: 2;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            padding-top: 1rem;
-            box-shadow: 0 0 1.5rem rgb(0 0 0 / 30%);
-            background-color: #FFF;
-            display: block;
-            min-width: 45vw;
-            transition: margin-right 0.25s;
-            margin-right: -45vw;
-
-            div.mobileMenuScroll {
-                position: absolute;
-                padding-top: 1rem;
-                left: 0px;
-                right: 0px;
-                top: 0px;
-                height: calc(100vh - 1rem);
-                overflow: auto;
-            }
-
-            a[href] {
-                display: block;
-                padding: 0.5em;
-                margin-left: 2em;
-                white-space: nowrap;
-                margin-right: 2em;
-            }
-
-            .mobileCloseMenu {
-                position: absolute;
-                display: block;
-                z-index: 2;
-                top: 2em;
-                margin-left: -2.2rem;
-                border: none;
-                background-image: url("/images/close.svg");
-                background-repeat: no-repeat;
-                background-size: .75rem .75rem;
-                background-position: center;
-                border-radius: 1.5rem;
-                background-color: #fff;
-                opacity: .7;
-                padding: 0;
-                overflow: hidden;
-                text-indent: 10000px;
-                width: 1.5rem;
-                height: 1.5rem;
             }
         }
     }
@@ -292,10 +217,16 @@ footer {
         margin-bottom: 1.5rem;
 
         @include mobileStyles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             a[href] {
-                display: block;
-                margin-left: 0px;
-                margin-right: 0px;
+                margin: 1px 0px;
+                padding: 0.25rem 2rem;
+                
+                &:hover, &:focus {
+                    @include activeNav;
+                }
             }
         }
     }
