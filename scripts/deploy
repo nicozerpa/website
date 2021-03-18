@@ -1,0 +1,9 @@
+#!/bin/bash
+DIRNAME="`dirname $0`/.."
+
+eval "${DIRNAME}/node_modules/.bin/gatsby build"
+
+tar -C "${DIRNAME}" -czf nicozerpacom.tar.gz public/ && \
+scp "${DIRNAME}/nicozerpacom.tar.gz" nicolas@direct.nicozerpa.com:/home/nicolas/nicozerpa.com && \
+rm "${DIRNAME}/nicozerpacom.tar.gz" && \
+ssh nicolas@direct.nicozerpa.com /home/nicolas/nicozerpa.com/deploy.sh
