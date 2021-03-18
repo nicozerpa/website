@@ -3,7 +3,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 
-export default function BlogPost({ data }) {
+interface BlogPostProps {
+    data: {
+        markdownRemark: {
+            frontmatter: {
+                title: string
+            },
+            html: string
+        }
+    }
+}
+
+export default function BlogPost({ data } : BlogPostProps) {
     const post = data.markdownRemark
 
     const articleBodyRef = useRef(null)
