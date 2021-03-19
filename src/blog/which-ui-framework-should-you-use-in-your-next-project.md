@@ -19,6 +19,6 @@ Vue.js scales well, and you can keep using it as your project grows larger.
 
 The drawback is that, as Vue.js is not as popular as React, there are fewer libraries that work with it. Thankfully, the Vue.js team also provides libraries for URL routing (Vue Router) and state management (Vuex).
 
-Angular is different than React and Vue.js because it’s does more than just UI. It’s a complete, very opinionated framework and it’s meant for large single page applications. It also has a steeper learning curve than React.
+Angular is different from React and Vue.js because it does more than just UI. It’s a complete, very opinionated framework and it’s meant for large single-page applications. It also has a steeper learning curve than React.
 
 Angular relies on TypeScript, the superset of JavaScript that adds strict type checking to the language. Definitely, it’s for big projects.
