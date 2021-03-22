@@ -22,10 +22,12 @@
     "gatsby-plugin-typescript": "^3.1.0",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.1.0",
+    "node-ssh": "^11.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "tar-fs": "^2.1.1"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.0",
