@@ -32,6 +32,7 @@ export default function Layout({ className, title, children }: LayoutProps) {
         <div className={className || ""}>
             <Helmet htmlAttributes={ {lang: "en"} }>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
+                <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
             </Helmet>
             <div className="contentWidth headerContentWidth">
                 <header>

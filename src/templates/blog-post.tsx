@@ -2,14 +2,16 @@ import React, { useEffect, useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
+import { Helmet } from "react-helmet"
 
 interface BlogPostProps {
-    data: {
-        markdownRemark: {
-            frontmatter: {
-                title: string
+    data : {
+        markdownRemark : {
+            frontmatter : {
+                title : string,
+                description : string
             },
-            html: string
+            html : string
         }
     }
 }
@@ -29,6 +31,9 @@ export default function BlogPost({ data } : BlogPostProps) {
 
     return (
         <Layout title={ post.frontmatter.title }>
+            <Helmet>
+                <meta name="description" content={ post.frontmatter.description }/>
+            </Helmet>
             <article className="single">
                 <h1>{ post.frontmatter.title }</h1>
                 <div
@@ -48,6 +53,7 @@ query BlogQuery($slug: String!) {
         html
         frontmatter {
             title
+            description
         }
     }
 }

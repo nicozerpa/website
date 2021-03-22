@@ -1,9 +1,10 @@
 ---
 title: How to Learn Modern JavaScript (Not Dying in the Process)
 id: 20210321
+description: JavaScript is one of the most popular languages, but learning it is challenging. If you're a beginner and need help to tackle it, I've got some tips for you.
 ---
 
-JavaScript is one of the most popular languages of the web. However, learning it is quite challenging. Many people find it confusing, overwhelming. If you're a beginner and want some help on how to tackle JavaScript, here are some useful tips for you:
+JavaScript is one of the most popular languages of the web. However, learning it is challenging. Many people find it confusing, overwhelming. If you're a beginner and want some help on how to tackle JavaScript, here are some useful tips for you:
 
 
 ## Don't Strive for Perfection: Programming is Making Mistakes

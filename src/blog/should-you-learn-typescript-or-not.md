@@ -1,6 +1,7 @@
 ---
 title: Should You Learn TypeScript or Not?
 id: 20210302
+description: JavaScript may be THE language of the Internet, but its ecosystem is overwhelming. Find out if it's a good idea to learn it.
 ---
 JavaScript may be THE language of the Internet, but its ecosystem is overwhelming. There are just so many frameworks, libraries and stacks that you’re never going to learn all of them.
 
