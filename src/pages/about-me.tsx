@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-export default function AboutMe() {
+export default function AboutMe() : JSX.Element {
     
     const now : Date = new Date();
     const nowYear : number = now.getFullYear();

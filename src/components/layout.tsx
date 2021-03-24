@@ -13,12 +13,12 @@ interface LayoutProps {
     children ?: React.ReactNode
 }
 
-export default function Layout({ className, title, children }: LayoutProps) {
+export default function Layout({ className, title, children }: LayoutProps) : JSX.Element {
 
-    const copyrightYear : number = 2021;
+    const copyrightYear = 2021;
     const currentYear : number = (new Date()).getFullYear();
 
-    let copyrightString : string = `${copyrightYear}`
+    let copyrightString = `${copyrightYear}`
 
     if (copyrightYear !== currentYear) {
         copyrightString += `-${currentYear}`

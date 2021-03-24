@@ -19,7 +19,7 @@ interface HomeProps {
     }
 }
 
-export default function Home({ data } : HomeProps) {
+export default function Home({ data } : HomeProps): JSX.Element {
     const { posts } = data.blog
 
     return (

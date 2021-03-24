@@ -6,7 +6,7 @@ interface NewsletterFormProps {
 
 
 
-export default function NewsletterForm({ includeCopy = true } : NewsletterFormProps) {
+export default function NewsletterForm({ includeCopy = true } : NewsletterFormProps) : JSX.Element {
 
     return (
         <form

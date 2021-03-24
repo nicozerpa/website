@@ -16,7 +16,7 @@ interface BlogPostProps {
     }
 }
 
-export default function BlogPost({ data } : BlogPostProps) {
+export default function BlogPost({ data } : BlogPostProps) : JSX.Element {
     const post = data.markdownRemark
 
     const articleBodyRef = useRef(null)

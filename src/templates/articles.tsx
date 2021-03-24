@@ -26,15 +26,15 @@ interface ArticlesProps {
     }
 }
 
-export default function Articles({ data } : ArticlesProps) {
+export default function Articles({ data } : ArticlesProps) : JSX.Element {
     const { posts, pageInfo } = data.blog
 
     const paginationArray: React.ReactNode[] = [];
     let pagination : React.ReactNode
     
     if (pageInfo.pageCount > 1) {
-        let minPage = Math.max(1, pageInfo.currentPage - 2);
-        let maxPage = Math.min(minPage + 4, pageInfo.pageCount);
+        const minPage = Math.max(1, pageInfo.currentPage - 2);
+        const maxPage = Math.min(minPage + 4, pageInfo.pageCount);
         
         if (minPage > 1) {
             paginationArray.push(<Link key="1" to="/articles/">«</Link>)

@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 
-export default function NewsletterPage() {
+export default function NewsletterPage() : JSX.Element {
     return (
         <Layout>
             <article className="single">

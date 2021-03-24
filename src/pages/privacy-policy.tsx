@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicy() : JSX.Element {
     
     return (
         <Layout title="Privacy Policy">
