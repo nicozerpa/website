@@ -1,11 +1,9 @@
 ---
 title: How to Learn Modern JavaScript (Not Dying in the Process)
 id: 20210321
-description: JavaScript is one of the most popular languages, but learning it is challenging. If you're a beginner and need help to tackle it, I've got some tips for you.
+description: JavaScript is one of the most popular languages, but it's challenging to learn. If you're a beginner and need help to tackle it, I've got some tips for you.
 ---
-
-JavaScript is one of the most popular languages of the web. However, learning it is challenging. Many people find it confusing, overwhelming. If you're a beginner and want some help on how to tackle JavaScript, here are some useful tips for you:
-
+JavaScript is one of the most popular languages nowadays. However, it's challenging to learn. Many people find it confusing, overwhelming. If you're a beginner and want some help on how to tackle JavaScript, here are some useful tips for you:
 
 ## Don't Strive for Perfection: Programming is Making Mistakes
 In 1999, the Mars Climate Orbiter was a spacecraft that NASA launched to explore Mars. However, the orbiter went off course and the mission failed. NASA lost $327 million in this mission.
