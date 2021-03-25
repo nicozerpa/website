@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import navLinks from "../resources/navbar.js"
 import { Helmet } from "react-helmet"
@@ -8,6 +8,7 @@ interface LayoutProps {
     title ?: string,
     children ?: React.ReactNode
 }
+
 
 export default function Layout({ className, title, children }: LayoutProps) : JSX.Element {
 
@@ -20,7 +21,21 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
         copyrightString += `-${currentYear}`
     }
 
-    const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") == "1")
+    const [darkMode, setDarkMode] = useState(false)
+
+    useEffect(function() {
+        let newDarkMode : boolean;
+        const darkModeFromLocalStorage = localStorage.getItem("darkMode")
+
+        if (darkModeFromLocalStorage === null) {
+            newDarkMode = matchMedia("(prefers-color-scheme: dark)").matches
+        } else {
+            newDarkMode = darkModeFromLocalStorage == "1"
+        }
+        
+        setDarkMode(newDarkMode)
+    }, [])
+
     const toggleDarkMode = function() {
         localStorage.setItem("darkMode", darkMode ? "0" : "1")
         setDarkMode(!darkMode)
@@ -32,7 +47,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
     
     return (
         <div className={className || ""}>
-            <Helmet htmlAttributes={ {lang: "en", class: darkMode ? "darkMode" : null } }>
+            <Helmet htmlAttributes={ {lang: "en", class: darkMode ? "darkMode" : "" } }>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
                 <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
             </Helmet>
@@ -48,7 +63,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                             
                             <button
                                 id="toggleDarkMode"
-                                title="Toggle Dark Mode"
+                                title={darkMode ? "Disable Dark Mode" : "Enable Dark Mode"}
                                 onClick={ toggleDarkMode }>
                                 <div className="innerDiv"/>
                             </button>
