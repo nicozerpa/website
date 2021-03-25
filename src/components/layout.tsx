@@ -1,11 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import navLinks from "../resources/navbar.js"
 import { Helmet } from "react-helmet"
-
-function contactEmail() {
-    window.location.href = "mailto:nico@nicozerpa.com";
-}
 
 interface LayoutProps {
     className ?: string,
@@ -24,13 +20,19 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
         copyrightString += `-${currentYear}`
     }
 
+    const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") == "1")
+    const toggleDarkMode = function() {
+        localStorage.setItem("darkMode", darkMode ? "0" : "1")
+        setDarkMode(!darkMode)
+    }
+
     const navLinksContent : React.ReactNode = navLinks 
             .filter(item => item.in === "all" || item.in === "header")
             .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
     
     return (
         <div className={className || ""}>
-            <Helmet htmlAttributes={ {lang: "en"} }>
+            <Helmet htmlAttributes={ {lang: "en", class: darkMode ? "darkMode" : null } }>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
                 <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
             </Helmet>
@@ -41,7 +43,16 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                     </Link>
                     <nav role="region" aria-label="Top Menu Bar">
                         <button className="mobileMenuButton" type="button">Menu</button>
-                        <div className="mobileMenuContainer">{ navLinksContent }</div>
+                        <div className="mobileMenuContainer">
+                            { navLinksContent }
+                            
+                            <button
+                                id="toggleDarkMode"
+                                title="Toggle Dark Mode"
+                                onClick={ toggleDarkMode }>
+                                <div className="innerDiv"/>
+                            </button>
+                        </div>
                     </nav>
                 </header>
             </div>
@@ -60,13 +71,8 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                 </nav>
                 <div>© { copyrightString } Nico Zerpa. All rights reserved.</div>
                 <div>
-                    You can get in touch with me at:
-                    <button onClick={ contactEmail } id="emailFooterButton" type="button">
-                        <picture>
-                            <source srcSet="/images/emailaddress@2x.png, /nzblogtheme/images/emailaddress@2x.png 1x"/>
-                            <img src="/images/emailaddress.png" alt="nico&shy; [a&shy;t]&shy; nicozerpa.com" id="emailFooterImage"/>
-                        </picture>
-                    </button>
+                    You can get in touch with me at: <a href="mailto:nico@nicozerpa.com">nico@nicozerpa.com</a>
+                    .
                 </div>
             </footer>
         </div>

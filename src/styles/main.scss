@@ -25,6 +25,7 @@ $brandColor5: #e6e6e6;
 	font-weight: 300;
 	line-height: 150%;
     margin: 0px;
+    transition: background-color 0.25s;
 }
 body {
     margin: 0px;
@@ -39,7 +40,10 @@ a[href] {
     }
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: "Metropolis", sans-serif; }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Metropolis", sans-serif;
+    line-height: 1.35;
+}
 
 code {
     display: inline-block;
@@ -198,6 +202,65 @@ header {
                 visibility: visible;
                 opacity: 1;
                 transition: opacity 0.25s;
+            }
+        }
+
+        #toggleDarkMode {
+            background-color: $brandColor4;
+            width: 3rem;
+            height: 1.5rem;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            padding: 0px;
+            box-sizing: border-box;
+            outline: none;
+            border: 2px solid darken($brandColor4, 20%);
+            margin-left: 2rem;
+            cursor: pointer;
+
+            @include mobileStyles {
+                display: block;
+                margin: 0.5rem auto;
+            }
+
+            &:focus { box-shadow: 0px 0px 3px 2px $brandColor1; }
+            
+            .innerDiv {
+                appearance: none;
+                background-color: $brandColor3;
+                width: calc(1.5rem - 4px);
+                height: calc(1.5rem - 4px);
+                border-radius: calc(1.5rem - 4px);
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                margin: 0px;
+                padding: 0px;
+                transition: left 0.25s;
+                outline: none;
+                z-index: 3;
+
+                &:before, &:after {
+                    position: absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    font-size: 0.75rem;
+                    line-height: calc(1.5rem - 4px);
+                }
+                &:before {
+                    content: "🌙";
+                    right: calc(1.5rem - 4px);
+                    padding-right: 0.25rem;
+                }
+
+                &:after {
+                    content: "🌞";
+                    left: calc(1.5rem - 4px);
+                    padding-left: 0.25rem;
+                }
             }
         }
     }
@@ -528,5 +591,68 @@ article.single {
                 border-radius: 3px;
             }
         }
+    }
+}
+
+:root.darkMode {
+    color: $brandColor3;
+    background-color: darken($brandColor4, 5%);
+
+    a[href] { color: $brandColor2; }
+
+    .button, a.button {
+        
+        background-color: darken($brandColor4, 7.5%);
+        border: 2px solid lighten($brandColor4, 7.5%);
+        color: $brandColor3;
+        padding: calc(0.35rem - 2px) calc(1.5rem - 2px);
+    }
+    
+    @include mobileStyles {
+        header nav .mobileMenuContainer {
+            background-color: darken($brandColor4, 5%);
+        }
+    }
+    nav a[href] { color: inherit; }
+    nav a[href]:focus { color: $brandColor2; }
+    #toggleDarkMode {
+        &:focus { box-shadow: 0px 0px 3px 2px $brandColor2; }
+        .innerDiv { left: calc(1.5rem); }
+    }
+    footer {
+        border-top-color: darken($brandColor4, 10%);
+    }
+
+    
+    #heroBanner {
+        border-bottom: 3px solid lighten($brandColor4, 50%);
+    }
+    .featuredArticles {
+        background-color: darken($brandColor4, 7.5%);
+        box-shadow: 0 0 0.5rem darken($brandColor4, 12.5%);
+        color: darken($brandColor3, 10%);
+
+        article:after {
+            border-top-color: darken($brandColor4, 15%);
+        }
+    }
+    .newsletterForm {
+        background-color: darken($brandColor4, 7.5%);
+        box-shadow: 0 0 0.5rem darken($brandColor4, 12.5%);
+        color: darken($brandColor3, 10%);
+        h3 { color: $brandColor2; }
+    }
+    .articleList h1 {
+        border: 3px solid lighten($brandColor4, 50%);
+    }
+
+    article.single {
+        h1 { border: 3px solid lighten($brandColor4, 50%); }
+        h2, h3 { color: $brandColor2; }
+    }
+
+    .newsletterForm .newsletterFormFields input {
+        background-color: darken($brandColor4, 5%);
+        border-color: darken($brandColor4, 15%);
     }
 }
