@@ -15,8 +15,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "blog",
-        path: `${__dirname}/src/blog/`,
+        name: "articles",
+        path: `${__dirname}/src/articles/`,
       },
     },
     "gatsby-plugin-typescript",
@@ -28,7 +28,7 @@ module.exports = {
       options: {
         query: `query{
           allSitePage(
-            filter: {componentChunkName: {ne: "component---src-templates-blog-post-tsx"}}
+            filter: {componentChunkName: {ne: "component---src-templates-article-tsx"}}
           ) {
             nodes {
               path
@@ -47,9 +47,9 @@ module.exports = {
         serialize: ({ allSitePage, allMarkdownRemark}) => {
           
           const basicPages = allSitePage.nodes.map(node => node.path)
-          const blogPages = allMarkdownRemark.nodes.map(node => node.fields.slug)
+          const articlePages = allMarkdownRemark.nodes.map(node => node.fields.slug)
 
-          return basicPages.concat(blogPages).map(function (url) {
+          return basicPages.concat(articlePages).map(function (url) {
             return {
               url: `https://nicozerpa.com${url}`,
               changefreq: "daily",

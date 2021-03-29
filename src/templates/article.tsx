@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 import { Helmet } from "react-helmet"
 
-interface BlogPostProps {
+interface ArticleProps {
     data : {
         markdownRemark : {
             frontmatter : {
@@ -16,7 +16,7 @@ interface BlogPostProps {
     }
 }
 
-export default function BlogPost({ data } : BlogPostProps) : JSX.Element {
+export default function Article({ data } : ArticleProps) : JSX.Element {
     const post = data.markdownRemark
 
     const articleBodyRef = useRef(null)

@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 interface ArticlesProps {
     data: {
-        blog: {
+        articles: {
             posts: [
                 {
                     frontmatter: {
@@ -27,7 +27,7 @@ interface ArticlesProps {
 }
 
 export default function Articles({ data } : ArticlesProps) : JSX.Element {
-    const { posts, pageInfo } = data.blog
+    const { posts, pageInfo } = data.articles
 
     const paginationArray: React.ReactNode[] = [];
     let pagination : React.ReactNode
@@ -71,7 +71,7 @@ export default function Articles({ data } : ArticlesProps) : JSX.Element {
 
 export const PageQuery = graphql`
 query ArticleListPosts($limit: Int!, $skip: Int!, ) {
-    blog: allMarkdownRemark(
+    articles: allMarkdownRemark(
             limit: $limit,
             skip: $skip,
             sort: {
@@ -80,7 +80,9 @@ query ArticleListPosts($limit: Int!, $skip: Int!, ) {
             },
             filter: {
                 frontmatter: {
-                    published: {eq: 1}
+                    published: {
+                        eq: 1
+                    }
                 }
             }
         ) {

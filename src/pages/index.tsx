@@ -53,7 +53,20 @@ export default function Home({ data } : HomeProps): JSX.Element {
 
 export const pageQuery = graphql`
 query HomePagePosts {
-    blog: allMarkdownRemark(limit: 4, sort: { fields: frontmatter___id, order: DESC }) {
+    blog: allMarkdownRemark(
+        limit: 4,
+        sort: {
+            fields: frontmatter___id,
+            order: DESC
+        }
+        filter: {
+            frontmatter: {
+                published: {
+                    eq: 1
+                }
+            }
+        }
+    ) {
         posts: nodes {
             fields {
                 slug
