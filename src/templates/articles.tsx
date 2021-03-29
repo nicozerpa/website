@@ -71,7 +71,19 @@ export default function Articles({ data } : ArticlesProps) : JSX.Element {
 
 export const PageQuery = graphql`
 query ArticleListPosts($limit: Int!, $skip: Int!, ) {
-    blog: allMarkdownRemark(limit: $limit, skip: $skip, sort: { fields: frontmatter___id, order: DESC }) {
+    blog: allMarkdownRemark(
+            limit: $limit,
+            skip: $skip,
+            sort: {
+                fields: frontmatter___id,
+                order: DESC
+            },
+            filter: {
+                frontmatter: {
+                    published: {eq: 1}
+                }
+            }
+        ) {
         posts: nodes {
             fields {
                 slug
