@@ -2,7 +2,7 @@
 title: Should you learn jQuery in 2021?
 id: 20210328
 description: It used to be the most popular JS library, is it still worth learning it? 
-published: 0
+published: 1
 ---
 
 Back in the day, Microsoft Internet Explorer was the most popular web browser. It was awful at following web standards. **Often, you had to code everything twice: one for standard-compliant browsers, and another for IE.**
