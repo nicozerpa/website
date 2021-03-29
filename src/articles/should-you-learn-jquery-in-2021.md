@@ -1,7 +1,7 @@
 ---
 title: Should you learn jQuery in 2021?
 id: 20210328
-description: 
+description: It used to be the most popular JS library, is it still worth learning it? 
 published: 0
 ---
 
