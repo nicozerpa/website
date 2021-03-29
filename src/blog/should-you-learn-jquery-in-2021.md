@@ -25,4 +25,4 @@ The thing is, if you are working on a small project, it's not worth adding an ex
 
 The big advantage of modern UI frameworks is that the framework itself takes the responsibility of changing the DOM, so you can focus on the business logic and declare how to display content on the page.
 
-Also, jQuery isn't hard to learn. If one day you have to work on a project that uses it, **you can learn the library on the go.** That's how I learned it 10 years ago! Just google a cheat sheet (I recommend [this one](https://oscarotero.com/jquery/)) and you'll be fine.
+Also, jQuery isn't hard to learn. If one day you have to work on a project that uses it (and there are many of them out there), **you can learn the library on the go.** That's how I learned it 10 years ago! Just google a cheat sheet (I recommend [this one](https://oscarotero.com/jquery/)) and you'll be fine.
