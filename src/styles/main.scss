@@ -602,8 +602,8 @@ article.single {
 }
 
 :root.darkMode {
-    color: $brandColor3;
-    background-color: darken($brandColor4, 5%);
+    color: darken($brandColor3, 10%);
+    background-color: darken($brandColor4, 15%);
 
     a[href] { color: $brandColor2; }
 
