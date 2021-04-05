@@ -56,6 +56,12 @@ code {
     border: 1px solid darken($brandColor3, 5%);
 }
 
+pre code {
+    display: block;
+    padding: 1em;
+    line-height: 1.3;
+}
+
 @mixin contentWidth {
     width: 90vw;
     max-width: 57rem;
