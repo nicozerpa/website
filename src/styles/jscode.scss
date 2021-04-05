@@ -3,6 +3,8 @@ pre code.language-javascript {
     background-color: #FFFFFF;
     border: 1px solid #EEEEEE;
     font-weight: normal;
+    display: block;
+    overflow: auto;
 
     .hljs-comment { opacity: 0.5; }
     .hljs-keyword { color: hsl(0, 32%, 58%) }
