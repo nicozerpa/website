@@ -3,6 +3,10 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 import { Helmet } from "react-helmet"
+import highlight from "highlight.js/lib/core"
+import highlightJS from "highlight.js/lib/languages/javascript"
+
+import "../styles/jscode.scss"
 
 interface ArticleProps {
     data : {
@@ -22,10 +26,15 @@ export default function Article({ data } : ArticleProps) : JSX.Element {
     const articleBodyRef = useRef(null)
 
     useEffect(() => {
+        highlight.registerLanguage("javascript", highlightJS)
+    }, [])
+
+    useEffect(() => {
         if (articleBodyRef.current) {
             articleBodyRef.current.querySelectorAll("a[href]").forEach(function(link) {
                 link.setAttribute("target", "_blank")
             })
+            articleBodyRef.current.querySelectorAll("pre code.language-javascript").forEach(item => highlight.highlightBlock(item))
         }
     })
 

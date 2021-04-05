@@ -1,0 +1,43 @@
+pre code.language-javascript {
+    color: #444444;
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    font-weight: normal;
+
+    .hljs-comment { opacity: 0.5; }
+    .hljs-keyword { color: hsl(0, 32%, 58%) }
+    .hljs-function {
+        .hljs-title { color:hsl(212, 63%, 43%); }
+    }
+    .hljs-string {
+        color: hsl(98, 46%, 50%);
+        .hljs-subst { color: hsl(4, 79%, 53%); }   
+    }
+    .hljs-built_in {
+        font-style: italic;
+        color:hsl(170, 33%, 51%);
+    }
+
+    .hljs-number, .hljs-literal { color: hsl(17, 94%, 67%); }
+}
+
+.darkMode pre code.language-javascript {
+    color: #DDD;
+    border: 1px solid #666;
+    background-color: #333;
+
+    .hljs-keyword { color: hsl(288, 38%, 59%); }
+    .hljs-function {
+        .hljs-title { color: hsl(170, 44%, 55%); }
+        .hljs-params { color: hsl(29, 100%, 63%); }
+    }
+    .hljs-string {
+        color: hsl(98, 61%, 63%);
+        .hljs-subst { color: #DDD; }   
+    }
+    .hljs-built_in {
+        font-style: italic;
+        color: hsl(288, 38%, 59%);
+    }
+    .hljs-number, .hljs-literal { color: hsl(29, 100%, 63%); }
+}

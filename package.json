@@ -23,6 +23,7 @@
     "gatsby-plugin-typescript": "^3.1.0",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.1.0",
+    "highlight.js": "^10.7.2",
     "node-ssh": "^11.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
