@@ -29,17 +29,17 @@ const rosesAre = flowerColour.bind(null, "Roses")
 console.log(rosesAre("red")) // Returns "Roses are red"
 ```
 
-**Use and create higher order functions**, these are functions that take a function as an argument or returns a function:
+**Use and create higher-order functions**, these are functions that take a function as an argument or returns a function:
 ```javascript
 
-/* Map is a higher order function, because
+/* Map is a higher-order function, because
    it takes a function as an argument */
 
 // Returns [10, 16, 37, 9]
 [20, 32, 74, 18].map(number => number / 2)
 
 
-/* Another higher order function, in this
+/* Another higher-order function, in this
    case, it returns a function */
 function createLuckyNumber(name) {
   const luckyNumber = parseInt(10000 * Math.random())
