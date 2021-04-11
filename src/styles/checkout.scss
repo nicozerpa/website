@@ -1,0 +1,118 @@
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #444;
+    background-color: #F5F5F5;
+    font-size: 0.95rem;
+
+    * { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+    body { margin: 1em; }
+
+    input[type="text"] {
+        font-size: 1em;
+        background-color: #FFF;
+        color: #444;
+        padding: 0.33em;
+        border: 1px solid #CCC;
+        display: inline-block;
+        line-height: 1.2;
+        vertical-align: middle;
+        border-radius: 0.33em;
+        box-shadow: 0px 0px 2px #CCC;
+    }
+    button {
+        font-size: 1em;
+        background-color: #cd4437;
+        color: #FFF;
+        font-weight: bold;
+        line-height: 1.2;
+        border: none;
+        cursor: pointer;
+        padding: 0.33em 1em;
+        border-radius: 0.33em;
+        border-bottom: 2px solid #a3362c;
+        display: inline-block;
+        box-shadow: 0px 1px 2px #999;
+        vertical-align: middle;
+    
+        &:hover {
+            background-color: #db4e41;
+            border-bottom-color: #a3362c;
+        }
+        &:active {
+            background-color: #db4e41;
+            border-bottom: none;
+            border-top: 2px solid #a3362c;
+        }
+    }
+
+    img.logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+        max-width: calc(100vw - 4em);
+    }
+    div.container {
+        padding: 2em;
+        border-radius: 0.5em;
+        max-width: 28em;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-color: #FFFFFF;
+        border: 1px solid #F0F0F0;
+        box-shadow: 0px 0px 1em #F0F0F0;
+    }
+    .product-metadata {
+        margin-bottom: 2em;
+
+        h1 { margin: 0px; }
+        p { margin: 0px; }
+    }
+
+    .amounts-and-coupon {
+        border-top: 1px solid #F0F0F0;
+        border-bottom: 1px solid #F0F0F0;
+        background-color: #FAFAFA;
+        margin: 0px -2em 2em -2em;
+        padding: 2em;
+    
+        p.amount {
+            color: #888;
+            font-size: 0.8em;
+            margin: 0px 0px 2em 0px;
+       
+            strong {
+                display: block;
+                color: #444;
+                font-size: 2em;
+            }
+        }
+        .coupon {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            @media screen and (max-width: 540px) {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            input[type="text"] {
+                flex-grow: 2;
+                flex-shrink: 2;
+            }
+        }
+    }
+    button.checkout {
+        font-size: 1em;
+
+    }
+    div.secure {
+        margin-top: 1em;
+        font-size: 0.8em;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+}
