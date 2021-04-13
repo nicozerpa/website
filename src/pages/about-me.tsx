@@ -14,7 +14,7 @@ export default function AboutMe() : JSX.Element {
         myAge--;
     }
 
-    const ageInMs : number = (new Date()).getTime() - (new Date("1989-12-24 00:00:00")).getTime()
+    const ageInMs : number = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime()
 
     return (
         <Layout title="About Me">
