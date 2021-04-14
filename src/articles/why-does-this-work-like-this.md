@@ -1,6 +1,6 @@
 ---
 title: "JavaScript: Why Does `this` Work Like This?"
-date: 20210411
+id: 20210411
 published: 1
 description: Many JS devs outright hate the keyword `this`. Learn how it works, so you can understand it.
 ---
