@@ -1,28 +1,28 @@
-:root {
+:root#codePage {
     font-size: 1rem;
     line-height: 1.2rem;
     margin: 0px;
     padding: 0px;
-}
-#codePage {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    justify-content: stretch;
-    align-items: stretch;
+    .codePage {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        justify-content: stretch;
+        align-items: stretch;
 
-    pre {
-        margin: 0px;
-        padding: 10px;
-        box-sizing: border-box;
-        white-space: pre-wrap;
-        width: 50%;
-        height: 100%;
-        overflow: auto;
-        position: relative;
+        pre {
+            margin: 0px;
+            padding: 10px;
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+            position: relative;
+        }
     }
 }
