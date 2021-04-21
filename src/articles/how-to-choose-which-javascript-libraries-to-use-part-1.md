@@ -2,7 +2,7 @@
 title: How To Choose Which JavaScript Libraries To Use (Part 1)
 id: 20210418
 description: Choosing the right tools is crucial when starting a new JavaScript project. In this four-article series, I'll give you my tips and tactics to make the best choices.
-published: 0
+published: 1
 ---
 So you want to create a JavaScript project? Great! Which library or framework are you going to use, React? Maybe Vue.js? Maybe you prefer using just Vanilla JS? Heck, even jQuery might be an option!
 
