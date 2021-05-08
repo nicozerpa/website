@@ -21,6 +21,6 @@ The ideal docs should be up-to-date and they shouldn't be misleading. The proble
 
 The solution to this? **Google what people say about the docs.** Whether they are good or bad, they'll post it online! Short comments like "The docs are great!" can be useful, but it's better if you can find more detailed opinions with the reasoning behind them.
 
-An example of a detailed opinion: "The step by step tutorials are the main reason why the docs are greatf because it provides a way for the community to centralise its information."
+An example of a detailed opinion: "The step by step tutorials are the main reason why the docs are great because it provides a way for the community to centralise its information."
 
 In the next and last article of this, you'll learn about FOBO, the fear of a better option. And how to handle it.
