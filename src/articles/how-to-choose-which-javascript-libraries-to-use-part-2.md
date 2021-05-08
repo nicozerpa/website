@@ -7,7 +7,7 @@ published: 1
 
 **Choosing the right tools is one of the most important decisions that you'll have to make when you start a new JavaScript project.**  In this four-article series, I'll give you my tips and tactics so you can choose the best libraries for your JS project.
 
-_[Click here to read part 1 of this series](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/)_
+_Click here to read the other articles in this series: [Part 1](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/)._
 
 ## Are New Libraries Better Than Old, "Obsolete" Ones?
 
@@ -21,4 +21,4 @@ Also, **with older, established libraries, it's easy to find help if you run int
 
 However, this doesn't always mean that older libraries are always better. Mootools is way older than React, but nobody would use Mootools now. Innovation exists, and it's essential. But choosing always the new and shiny is a mistake too.
 
-In the next article of this series, I'll talk about choosing libraries when you have to deal with DOM manipulation in the frontend.
+In the next article of this series, I'll talk about how to evaluate libraries according to their documentation. [Click here to read it](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/).
