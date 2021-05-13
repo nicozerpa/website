@@ -7,7 +7,7 @@ published: 1
 
 **Choosing the right tools is one of the most important decisions that you'll have to make when you start a new JavaScript project.**  In this four-article series, I'll give you my tips and tactics so you can choose the best libraries for your JS project.
 
-_Click here to read the other articles in this series: [Part 1](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/)._
+_Click here to read the other articles in this series: [Part 1](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/), [Part 4](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-4/)._
 
 ## Are New Libraries Better Than Old, "Obsolete" Ones?
 

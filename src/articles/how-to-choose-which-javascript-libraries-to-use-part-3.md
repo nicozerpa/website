@@ -7,7 +7,7 @@ published: 1
 
 **Choosing the right tools is one of the most important decisions that you'll have to make when you start a new JavaScript project.**  In this four-article series, I'll give you my tips and tactics so you can choose the best libraries for your JS project.
 
-_Click here to read the previous articles in this series: [Part 1](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/), [Part 2](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-2/)._
+_Click here to read the previous articles in this series: [Part 1](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-1/), [Part 2](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-2/), [Part 4](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-4/)._
 
 ## Documentation Is King
 
@@ -23,4 +23,4 @@ The solution to this? **Google what people say about the docs.** Whether they ar
 
 An example of a detailed opinion: "The step by step tutorials are the main reason why the docs are great because it provides a way for the community to centralise its information."
 
-In the next and last article of this, you'll learn about FOBO, the fear of a better option. And how to handle it.
+In the next and last article of this, you'll learn about FOBO, the fear of a better option. And how to handle it. [Click here to read it](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-4/).

@@ -5,7 +5,7 @@ description: Choosing the right tools is crucial when starting a new JavaScript 
 published: 1
 ---
 
-_Click here to read the other articles in this series: [Part 2](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-2/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/)._
+_Click here to read the other articles in this series: [Part 2](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-2/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/), [Part 4](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-4/)._
 
 So you want to create a JavaScript project? Great! Which library or framework are you going to use, React? Maybe Vue.js? Maybe you prefer using just Vanilla JS? Heck, even jQuery might be an option!
 
