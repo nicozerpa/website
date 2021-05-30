@@ -8,7 +8,7 @@ export default function NewsletterPage() : JSX.Element {
             <article className="single">
                 <h1>Become a Better JavaScript Developer</h1>
                 <div className="textContentWidth">
-                    <p>Easy, actionable steps to level up your JavaScript skills, right to your inbox every week. Enter your name and Email address below to subscribe:</p>
+                    <p>Easy, actionable steps to level up your JavaScript skills, right to your inbox. Enter your name and Email address below to subscribe:</p>
                 </div>
                 <NewsletterForm includeCopy={ false }/>
             </article>

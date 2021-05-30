@@ -16,7 +16,7 @@ export default function NewsletterForm({ includeCopy = true } : NewsletterFormPr
             className="newsletterForm">
 
             { includeCopy && <h3>Become a Better JavaScript Developer</h3> }
-            { includeCopy && <p>Easy, actionable steps to level up your JavaScript skills, right to your inbox every week. Enter your name and Email address below to subscribe:</p> }
+            { includeCopy && <p>Easy, actionable steps to level up your JavaScript skills, right to your inbox. Enter your name and Email address below to subscribe:</p> }
             
             <div className="newsletterFormFields">
                 <label className="newsletterFormFieldRow">
