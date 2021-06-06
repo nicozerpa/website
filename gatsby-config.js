@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * Configure your Gatsby site with this file.
  *
@@ -45,7 +46,7 @@ module.exports = {
         `,
         resolveSiteUrl: () => `https://nicozerpa.com/`,
         serialize: ({ allSitePage, allMarkdownRemark}) => {
-          
+
           const basicPages = allSitePage.nodes.map(node => node.path)
           const articlePages = allMarkdownRemark.nodes.map(node => node.fields.slug)
 
