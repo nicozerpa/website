@@ -39,7 +39,16 @@ export default function AboutMe() : JSX.Element {
         const interval = setInterval(function() {
             internalAgeInMs += 761;
 
-            if (!window.getSelection().containsNode(ageSpan.current, true)) {
+            const selection = window.getSelection();
+            let updateAge : boolean;
+
+            if (selection.containsNode(ageSpan.current, true)) {
+                updateAge = selection.isCollapsed;
+            } else {
+                updateAge = true;
+            }
+
+            if (updateAge) {
                 setAge({
                     inYears: calculateAge(),
                     inMs: internalAgeInMs
