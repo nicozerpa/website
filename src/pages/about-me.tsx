@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
@@ -26,6 +26,7 @@ const formatter = Intl.NumberFormat("en-US");
 export default function AboutMe() : JSX.Element {
     
     const [age, setAge] = useState<Age | null>(null);
+    const ageSpan = useRef(null);
 
     useEffect(function() : () => void {
         let internalAgeInMs = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime();
@@ -37,10 +38,13 @@ export default function AboutMe() : JSX.Element {
         
         const interval = setInterval(function() {
             internalAgeInMs += 761;
-            setAge({
-                inYears: calculateAge(),
-                inMs: internalAgeInMs
-            });
+
+            if (!window.getSelection().containsNode(ageSpan.current, true)) {
+                setAge({
+                    inYears: calculateAge(),
+                    inMs: internalAgeInMs
+                });
+            }
         }, 761);
         
         return function() : void {
@@ -69,7 +73,9 @@ export default function AboutMe() : JSX.Element {
                     Nico Zerpa. I’m a self-taught software developer based in Buenos Aires, Argentina.
 
                     { age &&
-                        <> I’m {formatter.format(age.inMs)} milliseconds of age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { age.inYears } years.</>
+                        <span ref={ ageSpan }> I’m {formatter.format(age.inMs)} milliseconds of
+                            age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { age.inYears } years.
+                        </span>
                     }
                     
                     </p>
