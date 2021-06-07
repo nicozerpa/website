@@ -1,9 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-export default function AboutMe() : JSX.Element {
-    
+function calculateAge() : number {
     const now : Date = new Date();
     const nowYear : number = now.getFullYear();
     const nowMonthDay : number = (now.getMonth() + 1) * 100 + now.getDay()
@@ -14,7 +13,42 @@ export default function AboutMe() : JSX.Element {
         myAge--;
     }
 
-    const ageInMs : number = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime()
+    return myAge;
+}
+
+type Age = {
+    inYears: number,
+    inMs: number
+};
+
+const formatter = Intl.NumberFormat("en-US");
+
+export default function AboutMe() : JSX.Element {
+    
+    const [age, setAge] = useState<Age | null>(null);
+
+    useEffect(function() : () => void {
+        let internalAgeInMs = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime();
+
+        setAge({
+            inYears: calculateAge(),
+            inMs: internalAgeInMs,
+        });
+        
+        const interval = setInterval(function() {
+            internalAgeInMs += 761;
+            setAge({
+                inYears: calculateAge(),
+                inMs: internalAgeInMs
+            });
+        }, 761);
+        
+        return function() : void {
+            clearInterval(interval);
+        }
+
+    }, []);
+
 
     return (
         <Layout title="About Me">
@@ -33,7 +67,13 @@ export default function AboutMe() : JSX.Element {
                 <div className="textContentWidth">
                     <p><strong>¡Hola!</strong> <span aria-label="Hand wawing emoji" role="img">👋</span> My name is
                     Nico Zerpa. I’m a self-taught software developer based in Buenos Aires, Argentina.
-                    I’m {ageInMs} milliseconds of age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { myAge } years.</p>
+
+                    { age &&
+                        <> I’m {formatter.format(age.inMs)} milliseconds of age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { age.inYears } years.</>
+                    }
+                    
+                    </p>
+                    
                     <p>I’ve been coding since I was 13 years old, and professionally for 12 years and counting.
                     JavaScript is one of the first languages I’ve ever
                     learned.</p>
