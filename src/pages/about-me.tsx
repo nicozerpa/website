@@ -18,7 +18,8 @@ function calculateAge() : number {
 
 type Age = {
     inYears: number,
-    inMs: number
+    inMsDynamic: number,
+    inMsStatic: number
 };
 
 const formatter = Intl.NumberFormat("en-US");
@@ -27,13 +28,16 @@ export default function AboutMe() : JSX.Element {
     
     const [age, setAge] = useState<Age | null>(null);
     const ageSpan = useRef(null);
+    const ageStaticSpan = useRef(null);
 
     useEffect(function() : () => void {
-        let internalAgeInMs = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime();
+        const internalAgeInMsStatic = (new Date()).getTime() - (new Date("1989-12-24T00:00:00")).getTime();
+        let internalAgeInMs = internalAgeInMsStatic;
 
         setAge({
             inYears: calculateAge(),
-            inMs: internalAgeInMs,
+            inMsDynamic: internalAgeInMs,
+            inMsStatic: internalAgeInMsStatic
         });
         
         const interval = setInterval(function() {
@@ -49,10 +53,14 @@ export default function AboutMe() : JSX.Element {
             }
 
             if (updateAge) {
+                ageStaticSpan.current.style.display = "";
                 setAge({
                     inYears: calculateAge(),
-                    inMs: internalAgeInMs
+                    inMsDynamic: internalAgeInMs,
+                    inMsStatic: internalAgeInMsStatic
                 });
+            } else {
+                ageStaticSpan.current.style.display = "none";
             }
         }, 761);
         
@@ -82,7 +90,8 @@ export default function AboutMe() : JSX.Element {
                     Nico Zerpa. I’m a self-taught software developer based in Buenos Aires, Argentina.
 
                     { age &&
-                        <span ref={ ageSpan }> I’m {formatter.format(age.inMs)} milliseconds of
+                        <span ref={ ageSpan }> I’m <span aria-hidden="true">{formatter.format(age.inMsDynamic)}</span>
+                            <span className="visuallyHidden" ref={ageStaticSpan}>{formatter.format(age.inMsStatic)}</span> milliseconds of
                             age <span aria-label="Tongue out emoji" role="img">😜</span>, that is { age.inYears } years.
                         </span>
                     }
