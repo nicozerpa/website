@@ -2,7 +2,7 @@
 title: Learning JavaScript and Feeling Overwhelmed? Here's Some Good News
 id: 20210606
 description: Learning JavaScript can seem overwhelming. There's just so many things to learn. Thankfully, you don't have to learn everything.
-published: 0
+published: 1
 ---
 Unfortunately, it's easy to feel overwhelmed and confused when you start learning JavaScript, or any programming language, for that matter. **The world of software is massive, there's just so many things to learn!**
 
