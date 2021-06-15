@@ -18,6 +18,11 @@ const navbar = [
         label: "Privacy Policy",
         url: "/privacy-policy/",
         in: "footer"
+    },
+    {
+        label: "RSS",
+        url: "rss.xml",
+        in: "footer"
     }
 ];
 export default navbar;
