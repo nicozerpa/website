@@ -25,9 +25,69 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-feed",
+      options: {
+        query: `query {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }`,
+        feeds: [
+          {
+            query: `{
+              allMarkdownRemark(
+                filter: {frontmatter: {published: {eq: 1}}}
+                sort: {fields: frontmatter___id, order: DESC}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      id
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+
+                const year = String(edge.node.frontmatter.id).substr(0, 4);
+                const month = String(edge.node.frontmatter.id).substr(4, 2);
+                const day = String(edge.node.frontmatter.id).substr(6, 2);
+
+                const date = `${year}-${month}-${day}`;
+
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            output: "rss.xml",
+            title: "Nico Zerpa RSS Feed"
+          }
+        ]
+      }
+    },
+    {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `query{
+        query: `query {
           allSitePage(
             filter: {componentChunkName: {ne: "component---src-templates-article-tsx"}}
           ) {

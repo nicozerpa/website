@@ -50,6 +50,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
             <Helmet htmlAttributes={ {lang: "en", class: darkMode ? "darkMode" : "" } }>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
                 <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
+                <link rel="alternate" type="application/rss+xml" title="Nico Zerpa RSS Feed"  href="/rss.xml" />
             </Helmet>
             <div className="contentWidth headerContentWidth">
                 <header>
