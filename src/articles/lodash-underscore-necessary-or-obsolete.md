@@ -93,11 +93,11 @@ const map = require("lodash/map");
 const cloneDeep = require("lodash/cloneDeep");
 ```
 
-In fact, lodash has a NPM package for every utility. You can just install the functions you need, like this:
+In fact, Lodash has a NPM package for every utility. You can just install the functions you need, like this:
 ```
 npm i lodash.clonedeep --save
 ```
-However, if you decide to install specific utilities from lodash, you have to import them differently:
+However, if you decide to install specific utilities from Lodash, you have to import them differently:
 ```javascript
 // In ES6 module style:
 import cloneDeep from "lodash.clonedeep";
