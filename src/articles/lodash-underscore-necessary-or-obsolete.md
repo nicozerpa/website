@@ -1,7 +1,7 @@
 ---
 title: Lodash or Underscore in 2021. Necessary or Obsolete?
 id: 20210620
-published: 0
+published: 1
 description: JavaScript now has many of the utilities Lodash and Underscore used to offer. Are these still necessary, or Am I adding unnecessary bloat into my project?
 ---
 If you have a couple of years as a developer, you've probably used either [Lodash](https://lodash.com/) or [Underscore.js](https://underscorejs.org/). These are two libraries that provide a bunch of utilities to manipulate data, particularly array and objects.
