@@ -1,12 +1,18 @@
 import React from "react"
 
 interface NewsletterFormProps {
-    includeCopy ?: boolean
+    includeCopy ?: boolean,
+    copyTitle ?: string,
+    copyDescription ?: string
 }
 
 
 
-export default function NewsletterForm({ includeCopy = true } : NewsletterFormProps) : JSX.Element {
+export default function NewsletterForm({
+    includeCopy = true,
+    copyTitle = "Become a Better JavaScript Developer",
+    copyDescription = "Easy, actionable steps to level up your JavaScript skills, right to your inbox. Enter your name and Email address below to subscribe:"
+} : NewsletterFormProps) : JSX.Element {
 
     return (
         <form
@@ -15,8 +21,8 @@ export default function NewsletterForm({ includeCopy = true } : NewsletterFormPr
             target="_blank"
             className="newsletterForm">
 
-            { includeCopy && <h3>Become a Better JavaScript Developer</h3> }
-            { includeCopy && <p>Easy, actionable steps to level up your JavaScript skills, right to your inbox. Enter your name and Email address below to subscribe:</p> }
+            { includeCopy && copyTitle && <h3>{copyTitle}</h3> }
+            { includeCopy && copyDescription && <p>{copyDescription}</p> }
             
             <div className="newsletterFormFields">
                 <label className="newsletterFormFieldRow">

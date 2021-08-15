@@ -339,11 +339,18 @@ footer {
     margin-left: auto;
     margin-right: auto;
 
+    @include mobileStyles {
+        margin-left: 0vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        width: 90vw;
+        border-radius: 0px;
+    }
+
     h3 {
         color: $brandColor1;
         margin-top: 0px;
     }
-
     .newsletterFormFields {
         display: table;
         margin-bottom: 0.5rem;
@@ -433,30 +440,34 @@ footer {
     }
 }
 
-div.homePage .headerContentWidth {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    header {
-        @include mobileStyles {
-            .mobileMenuButton {
-                background-image: url("/images/hamburger-home.svg");
-            }
-        }
-
-        nav {
-            a {
-                color: #FFF;
-                @include mobileStyles {
-                    color: #000;
+div.homePage {
+    .headerContentWidth {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        header {
+            @include mobileStyles {
+                .mobileMenuButton {
+                    background-image: url("/images/hamburger-home.svg");
                 }
             }
 
-            #toggleDarkMode:focus { box-shadow: 0px 0px 3px 2px $brandColor2; }
+            nav {
+                a {
+                    color: #FFF;
+                    @include mobileStyles {
+                        color: #000;
+                    }
+                }
+
+                #toggleDarkMode:focus { box-shadow: 0px 0px 3px 2px $brandColor2; }
+            }
         }
     }
+    @include mobileStyles {
+        .textContentWidth .newsletterForm { margin-left: -5vw; }
+    }
 }
-
 #heroBanner {
     background-color: $brandColor1;
     background-image: url("/images/corner-01-top-left.svg"),
@@ -466,20 +477,36 @@ div.homePage .headerContentWidth {
     background-position: left -20px top -20px, right -20px bottom -20px;
 
     color: $brandColor5;
-    font-family: Metropolis, sans-serif;
+    /*font-family: Metropolis, sans-serif;
     font-weight: 700;
     font-size: 2rem;
     line-height: 115%;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.025em;*/
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 11rem 2rem 8rem 2rem;
+    padding: 11rem 2rem 3rem 2rem;
     margin-bottom: 3rem;
 
     @include mobileStyles {
         font-size: 1.2rem;
+        padding-top: 7rem;
+        padding-bottom: 0px;
+    }
+
+    .newsletterForm {
+        margin-bottom: 0px;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.1);
+
+        p {
+            margin-block-start: 0px;
+        }
+        .button {
+            border: 2px solid $brandColor5;
+        }
     }
 
     .heroContainer {
@@ -490,11 +517,12 @@ div.homePage .headerContentWidth {
             color: $brandColor2;
             line-height: 110%;
             margin-top: 0rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
 
             @include mobileStyles {
                 width: calc(100vw - 2rem);
                 font-size: 2.3rem;
+                margin-left: 1rem;
             }
         }
     }

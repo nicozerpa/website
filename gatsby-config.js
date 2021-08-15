@@ -24,6 +24,7 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-meta-redirect",
     {
       resolve: "gatsby-plugin-feed",
       options: {

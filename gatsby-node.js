@@ -31,9 +31,14 @@ exports.createPages = async ({
     graphql,
     actions
 }) => {
-    const {
-        createPage
-    } = actions
+    const { createRedirect, createPage} = actions;
+
+    createRedirect({
+        fromPath: "/newsletter",
+        toPath: "/",
+        isPermanent: true
+    });
+
     const result = await graphql(`
     query {
       allMarkdownRemark {
