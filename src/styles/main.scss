@@ -662,6 +662,15 @@ article.single {
     
     #heroBanner {
         border-bottom: 3px solid lighten($brandColor4, 50%);
+
+        background-color: darken($brandColor4, 7.5%);
+        box-shadow: 0 0 0.5rem darken($brandColor4, 12.5%);
+        color: darken($brandColor3, 10%);
+
+        .newsletterForm .button {
+            background-color: darken($brandColor1, 5%);
+            border-color: lighten($brandColor1, 25%);
+        }
     }
     .featuredArticles {
         background-color: darken($brandColor4, 7.5%);
