@@ -3,32 +3,13 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 
-interface HomeProps {
-    data : {
-        blog: {
-            posts: [{
-                frontmatter: {
-                    id: number,
-                    title: string
-                },
-                fields: {
-                    slug: string
-                },
-                excerpt: string
-            }]
-        }
-    }
-}
-
-export default function Home({ data } : HomeProps): JSX.Element {
-    const { posts } = data.blog
-
+export default function Home(): JSX.Element {
     return (
         <Layout className="homePage">
             <section role="banner" id="heroBanner">
                 <div className="heroContainer">
                     <h1>Learning JavaScript can be a pain in the @#&amp;!</h1>
-                    <NewsletterForm copyTitle={null} copyDescription="But I can give you a hand! Free newsletter to help you grow your JS skills:"/>
+                    <NewsletterForm copyTitle={null} copyDescription="But I can give you a hand. Free newsletter to help you grow your JS skills:"/>
                 </div>
             </section>
 
@@ -62,34 +43,3 @@ export default function Home({ data } : HomeProps): JSX.Element {
         </Layout>
     );
 }
-
-export const pageQuery = graphql`
-query HomePagePosts {
-    blog: allMarkdownRemark(
-        limit: 4,
-        sort: {
-            fields: frontmatter___id,
-            order: DESC
-        }
-        filter: {
-            frontmatter: {
-                published: {
-                    eq: 1
-                }
-            }
-        }
-    ) {
-        posts: nodes {
-            fields {
-                slug
-            }
-            frontmatter {
-                title
-                id
-            }
-            excerpt
-            id
-        }
-    }
-}
-`
