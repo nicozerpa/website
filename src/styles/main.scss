@@ -467,6 +467,13 @@ div.homePage {
     @include mobileStyles {
         .textContentWidth .newsletterForm { margin-left: -5vw; }
     }
+
+    h2 {
+        color: $brandColor1;
+        @include mobileStyles {
+            font-size: 1.17rem;
+        }
+    }
 }
 #heroBanner {
     background-color: $brandColor1;
@@ -477,12 +484,7 @@ div.homePage {
     background-position: left -20px top -20px, right -20px bottom -20px;
 
     color: $brandColor5;
-    /*font-family: Metropolis, sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 115%;
-    letter-spacing: -0.025em;*/
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -517,12 +519,26 @@ div.homePage {
             color: $brandColor2;
             line-height: 110%;
             margin-top: 0rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
 
             @include mobileStyles {
                 width: calc(100vw - 2rem);
                 font-size: 2.3rem;
                 margin-left: 1rem;
+            }
+        }
+        .heroText {
+            font-family: Metropolis, sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            line-height: 115%;
+            letter-spacing: -0.025em;
+
+            @include mobileStyles {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                font-size: 1.3rem;
             }
         }
     }

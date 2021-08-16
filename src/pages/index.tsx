@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 
@@ -8,12 +7,14 @@ export default function Home(): JSX.Element {
         <Layout className="homePage">
             <section role="banner" id="heroBanner">
                 <div className="heroContainer">
-                    <h1>Learning JavaScript can be a pain in the @#&amp;!</h1>
-                    <NewsletterForm copyTitle={null} copyDescription="But I can give you a hand. Free newsletter to help you grow your JS skills:"/>
+                    <h1>Free JavaScript Newsletter</h1>
+                    <div className="heroText">Every other Monday, easy and actionable steps to level up your JavaScript skills.</div>
+                    <NewsletterForm includeCopy={false}/>
                 </div>
             </section>
 
             <div className="textContentWidth">
+                <h2>Learning JavaScript can be a pain in the @#&amp;!</h2>
                 <p>You&rsquo;re eager to learn JavaScript, but you feel stuck.</p>
                 <ul>
                     <li>There&rsquo;s so many JavaScript framework/libraries/stacks... and <strong>you don&rsquo;t know what to choose.</strong></li>
