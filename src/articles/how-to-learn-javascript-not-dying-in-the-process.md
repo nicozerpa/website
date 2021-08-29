@@ -3,6 +3,7 @@ title: How to Learn Modern JavaScript (Not Dying in the Process)
 id: 20210321
 description: JavaScript is one of the most popular languages, but it's challenging to learn. If you're a beginner and need help to tackle it, I've got some tips for you.
 published: 1
+keywords: learning, beginners, mindset
 ---
 JavaScript is one of the most popular languages nowadays. However, it's challenging to learn. Many people find it confusing, overwhelming. If you're a beginner and want some help on how to tackle JavaScript, here are some useful tips for you:
 

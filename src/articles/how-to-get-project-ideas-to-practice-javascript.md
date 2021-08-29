@@ -3,6 +3,7 @@ title: How to Get Project Ideas to Practice JavaScript
 id: 20210718
 description: Practising is, by far, the best way to learn JavaScript. Here's some ideas to come up with new project ideas.
 published: 1
+keywords: project ideas, ideas, practice, learning, beginners
 ---
 **Practising is, by far, the best way to learn JavaScript.** No matter if you read hundreds of articles or watch dozens of courses, you need to practice coding to really learn. However, for many beginners, it's hard to come up with ideas. Which ideas or projects should I create to practise?
 
