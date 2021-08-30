@@ -15,19 +15,19 @@
     "deploy": "node ./scripts/deploy.mjs"
   },
   "dependencies": {
-    "gatsby": "^3.6.2",
+    "gatsby": "^3.12.1",
     "gatsby-cli": "^3.6.0",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-matomo": "^0.10.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-react-helmet": "^4.6.0",
     "gatsby-plugin-sass": "^4.6.0",
-    "gatsby-plugin-sitemap": "^3.2.0",
+    "gatsby-plugin-sitemap": "^4.8.0",
     "gatsby-plugin-typescript": "^3.6.0",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-remark": "^4.3.0",
     "highlight.js": "^11.0.1",
-    "node-ssh": "^11.1.1",
+    "node-ssh": "^12.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
@@ -40,7 +40,7 @@
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
     "eslint-plugin-react": "^7.23.1",
-    "prettier": "2.3.1"
+    "prettier": "2.3.2"
   },
   "repository": {
     "type": "git",
