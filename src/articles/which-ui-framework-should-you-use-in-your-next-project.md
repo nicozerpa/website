@@ -3,7 +3,7 @@ title: Which UI Framework Should You Use in Your Next Project?
 id: 20210313
 description: When creating a new front-end project, the question of choosing which framework to use always come to mind. In this article, you'll see how to do it.
 published: 1
-keywords: react, vue.js, angular, ui frameworks, library selection, best practices
+tags: ["react", "vue.js", "angular", "ui frameworks", "library selection", "best practices"]
 ---
 
 When creating a new front-end project, the question of choosing which framework to use always come to mind. Should I choose React or Vue.js? What about Angular? Is it still a good idea to use Vanilla JavaScript?

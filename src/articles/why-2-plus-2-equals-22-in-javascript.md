@@ -3,7 +3,7 @@ title: Why 2+2 equals 22 in JavaScript (and other gotchas that cause bugs)
 id: 20210523
 description: JavaScript has nuances that trip up developers, especially beginners. Here are some of the most common ones, and how to avoid them.
 published: 1
-keywords: gotchas, language features, best practices
+tags: ["gotchas", "language features", "best practices"]
 ---
 JavaScript is a powerful language, but it has some nuances that might trip up developers, especially if you're a beginner. And some of them can cause bugs that could be hard to find. Here are some of the most common ones, and how to avoid them:
 

@@ -3,7 +3,7 @@ title: Understand Async/Await in 5 Minutes
 id: 20210815
 description: Understanding async in JavaScript is hard, getting your head around it takes a shift in thinking. Here, I'll make a quick explanation so that you can start using it.
 published: 1
-keywords: async, await, asynchronous, promise, then, javascript features
+tags: ["async", "await", "asynchronous", "promise", "then", "javascript features"]
 ---
 Understanding async in JavaScript is a common problem for many developers. **Getting your head around it takes a shift in thinking.** Here, I'll make a quick rundown of the most important concepts of asynchronous JavaScript so that you can start using it.
 

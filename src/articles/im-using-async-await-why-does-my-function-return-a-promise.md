@@ -3,7 +3,7 @@ title: I'm Using async/await. Why Does My Function Return a Promise?
 id: 20210516
 description: The async/await patterns make asynchronous tasks way easier, but it has some gotchas. How to solve them?
 published: 1
-keywords: async, await, language features, gotchas
+tags: ["async", "await", "language features", "gotchas"]
 ---
 Handling asynchronous became way easier thanks to the `async`/`await` pattern. **It makes async tasks almost as straightforward as regular synchronous operations:**
 
