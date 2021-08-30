@@ -46,6 +46,7 @@ exports.createPages = async ({
           node {
             fields {
               slug
+              relatedFileAbsolutePaths
             }
           }
         }
@@ -59,6 +60,7 @@ exports.createPages = async ({
             component: path.resolve("./src/templates/article.tsx"),
             context: {
                 slug: node.fields.slug,
+                relatedFileAbsolutePaths: node.fields.relatedFileAbsolutePaths
             },
         })
     })

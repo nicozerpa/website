@@ -9,21 +9,38 @@ import highlightJS from "highlight.js/lib/languages/javascript"
 import "../styles/jscode.scss"
 
 interface ArticleProps {
-    data : {
-        markdownRemark : {
-            frontmatter : {
-                title : string,
-                description : string
-            },
-            html : string
+    data: {
+        markdownRemark: ArticleData,
+        relatedPosts: {
+            nodes: RelatedPostNode[]
         }
+    },
+    pageContext: {
+        slug: string,
+        relatedFileAbsolutePaths: string[]
     }
 }
+interface ArticleData {
+    frontmatter: {
+        title: string,
+        description: string
+    },
+    html: string
+}
 
-export default function Article({ data } : ArticleProps) : JSX.Element {
-    const post = data.markdownRemark
+interface RelatedPostNode {
+    fields: {
+        slug: string
+    },
+    frontmatter: {
+        title: string
+    },
+    fileAbsolutePath: string
+}
 
-    const articleBodyRef = useRef(null)
+export default function Article({ data: { markdownRemark: post, relatedPosts }, pageContext } : ArticleProps) : JSX.Element {
+
+    const articleBodyRef = useRef(null);
 
     useEffect(() => {
         highlight.registerLanguage("javascript", highlightJS)
@@ -38,6 +55,37 @@ export default function Article({ data } : ArticleProps) : JSX.Element {
         }
     })
 
+    let relatedArticlesOutput: JSX.Element;
+
+    if (relatedPosts.nodes.length > 0) {
+
+        const relatedPaths = pageContext.relatedFileAbsolutePaths;
+        const sortedRelatedPosts: RelatedPostNode[] = [];
+
+        for (const relatedPath of relatedPaths) {
+            const foundNode = relatedPosts.nodes.find(node => node.fileAbsolutePath == relatedPath);
+            if (foundNode) {
+                sortedRelatedPosts.push(foundNode);
+                if (sortedRelatedPosts.length >= 4) {
+                    break;
+                }
+            }
+        }
+
+        relatedArticlesOutput = <section className="relatedArticles textContentWidth">
+            <h3>Related Articles</h3>
+            <ul> {
+                sortedRelatedPosts.map(
+                    node => <li key={node.fields.slug}>
+                        <a href={node.fields.slug}>{node.frontmatter.title}</a>
+                    </li>
+                    )
+            } </ul>
+        </section>
+    } else {
+        relatedArticlesOutput = null;
+    }
+
     return (
         <Layout title={ post.frontmatter.title }>
             <Helmet>
@@ -51,19 +99,39 @@ export default function Article({ data } : ArticleProps) : JSX.Element {
                     dangerouslySetInnerHTML={{ __html: post.html }}>
                 </div>
             </article>
+            {relatedArticlesOutput}
             <NewsletterForm/>
         </Layout>
     )
 }
 
 export const query = graphql`
-query BlogQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-        html
-        frontmatter {
+query BlogQuery($slug: String!, $relatedFileAbsolutePaths: [String!]!) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+            html
+            frontmatter {
             title
             description
         }
     }
-}
+    relatedPosts: allMarkdownRemark(
+        filter: {
+            fileAbsolutePath: {in: $relatedFileAbsolutePaths},
+            frontmatter: {
+                includeInSimilar: {eq: true},
+                published: {eq: true}
+            }
+        }
+    ) {
+        nodes {
+            fields {
+                slug
+            }
+            frontmatter {
+                title
+            }
+            fileAbsolutePath
+        }
+    }
+}  
 `

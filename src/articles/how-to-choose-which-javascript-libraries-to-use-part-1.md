@@ -2,8 +2,9 @@
 title: How To Choose Which JavaScript Libraries To Use (Part 1)
 id: 20210418
 description: Choosing the right tools is crucial when starting a new JavaScript project. In this four-article series, I'll give you my tips and tactics to make the best choices.
-published: 1
+published: true
 tags: ["library selection", "ecosystem", "best practices"]
+includeInSimilar: true
 ---
 
 _Click here to read the other articles in this series: [Part 2](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-2/), [Part 3](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-3/), [Part 4](https://nicozerpa.com/how-to-choose-which-javascript-libraries-to-use-part-4/)._

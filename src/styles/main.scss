@@ -609,6 +609,23 @@ article.single {
     h2, h3 { color: $brandColor1; }
     img { max-width: 100%; }
 }
+.relatedArticles {
+    padding-top: 0.5em;
+    position: relative;
+    padding-bottom: 1em;
+
+    &:before {
+        border-top: 1px solid;
+        content: " ";
+        position: absolute;
+        left: 10%;
+        top: 0px;
+        right: 10%;
+        opacity: 0.2;
+    }
+
+    h3 { opacity: 0.9; }
+}
 blockquote {
     background-color: $brandColor3;
     margin-left: 0px;

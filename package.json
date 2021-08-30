@@ -24,6 +24,7 @@
     "gatsby-plugin-sass": "^4.6.0",
     "gatsby-plugin-sitemap": "^4.8.0",
     "gatsby-plugin-typescript": "^3.6.0",
+    "gatsby-remark-related-posts": "^1.0.5",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-remark": "^4.3.0",
     "highlight.js": "^11.0.1",

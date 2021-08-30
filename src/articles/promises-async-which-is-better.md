@@ -2,8 +2,9 @@
 title: Promises or async/await, Which Is Better?
 id: 20210704
 description: "Both approaches tackle a colossal pain in JavaScript: handling asynchronous tasks. But, what's the difference, and when should you use one over the other?"
-published: 1
+published: true
 tags: ["async", "await", "promises", "best practices", "language features"]
+includeInSimilar: true
 ---
 **Handling asynchronous tasks in JavaScript has always been a colossal pain in the neck.** Back in the day, developers had to deal with problems like callback hell and code that often became hard to read, scale, and maintain.
 

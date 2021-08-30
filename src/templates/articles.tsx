@@ -81,7 +81,7 @@ query ArticleListPosts($limit: Int!, $skip: Int!, ) {
             filter: {
                 frontmatter: {
                     published: {
-                        eq: 1
+                        eq: true
                     }
                 }
             }

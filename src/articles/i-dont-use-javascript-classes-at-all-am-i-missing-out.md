@@ -1,8 +1,9 @@
 ---
 title: I Don't Use JavaScript Classes At All. Am I Missing Out on Something?
 id: 20210405
-published: 1
+published: true
 tags: ["classes", "this", "object-oriented programming", "functional programming", "javascript features"]
+includeInSimilar: true
 ---
 If you spend time reading about JavaScript and keeping up with the latest stuff online, you'll notice that many discussions revolve around classes. But if you don't use them, you might feel like you're "stuck in the old ways". **What are you missing out on if you don't use classes?**
 

@@ -1,9 +1,10 @@
 ---
 title: "JavaScript: Why Does `this` Work Like This?"
 id: 20210411
-published: 1
+published: true
 description: Many JS devs outright hate the keyword `this`. Learn how it works, so you can understand it.
 tags: ["this", "object-oriented programming", "gotchas"]
+includeInSimilar: true
 ---
 
 "I hate this about JavaScript", "It creates so much confusion and so many bugs for zero gain.", "It's broken, Don't use it!" That's what many JavaScript devs think about the `this` keyword. **For many of them, `this` has definitely given them the most trouble with more complex apps.**

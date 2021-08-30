@@ -26,6 +26,13 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-meta-redirect",
     {
+      resolve: "gatsby-remark-related-posts",
+      options: {
+        posts_dir: `${__dirname}/src/articles/`,
+        doc_lang: "en",
+      },
+    },
+    {
       resolve: "gatsby-plugin-feed",
       options: {
         query: `query {
@@ -42,7 +49,7 @@ module.exports = {
           {
             query: `{
               allMarkdownRemark(
-                filter: {frontmatter: {published: {eq: 1}}}
+                filter: {frontmatter: {published: {eq: true}}}
                 sort: {fields: frontmatter___id, order: DESC}
               ) {
                 edges {
@@ -96,7 +103,7 @@ module.exports = {
               path
             }
           }
-          allMarkdownRemark(filter: {frontmatter: {published: {eq: 1}}}) {
+          allMarkdownRemark(filter: {frontmatter: {published: {eq: true}}}) {
             nodes {
               fields {
                 slug
