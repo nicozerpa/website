@@ -95,9 +95,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `query {
+        query: `
+        query {
           allSitePage(
-            filter: {componentChunkName: {ne: "component---src-templates-article-tsx"}}
+            filter: {componentChunkName: {ne: "component---src-templates-article-tsx"}, path: {ne: "/--code--/"}}
           ) {
             nodes {
               path
@@ -110,21 +111,23 @@ module.exports = {
               }
             }
           }
-        }
+        }        
         `,
         resolveSiteUrl: () => `https://nicozerpa.com/`,
-        serialize: ({ allSitePage, allMarkdownRemark}) => {
+        resolvePages: ({ allSitePage: { nodes: pages }, allMarkdownRemark: {nodes: articles }}) => {
+          return [
+            ...pages,
+            ...articles.map(article => ({ path: article.fields.slug }))
+          ];
+        },
 
-          const basicPages = allSitePage.nodes.map(node => node.path)
-          const articlePages = allMarkdownRemark.nodes.map(node => node.fields.slug)
 
-          return basicPages.concat(articlePages).map(function (url) {
-            return {
-              url: `https://nicozerpa.com${url}`,
-              changefreq: "daily",
-              priority: 0.7
-            }
-          })
+        serialize: ({ path }) => {
+          return {
+            url: `https://nicozerpa.com${path}`,
+            changefreq: "daily",
+            priority: 0.7
+          }
         }
       }
     },
