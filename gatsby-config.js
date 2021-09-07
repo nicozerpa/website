@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: "gatsby-remark-related-posts",
       options: {
-        posts_dir: `${__dirname}/src/articles/`,
+        posts_dir: `${__dirname}/src/articles`,
         doc_lang: "en",
       },
     },

@@ -1,7 +1,7 @@
 ---
 title: What is Vanilla JavaScript?
 id: 20210906
-description: 
+description: Vanilla JavaScript is basically JavaScript without using libraries or frameworks like React, Angular, or Vue.js.
 published: true
 tags: ["beginners", "vanilla"]
 includeInSimilar: true
