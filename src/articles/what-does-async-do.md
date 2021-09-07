@@ -1,12 +1,12 @@
 ---
-title: Understand Async/Await in 5 Minutes
+title: "In 5 Minutes: What Does Async Do in JavaScript?"
 id: 20210815
-description: Understanding async in JavaScript is hard, getting your head around it takes a shift in thinking. Here, I'll make a quick explanation so that you can start using it.
+description: Understanding async/await in JavaScript is hard, but here, I'll make a quick explanation so that you can start using it.
 published: true
 tags: ["async", "await", "asynchronous", "promise", "then", "javascript features"]
 includeInSimilar: true
 ---
-Understanding async in JavaScript is a common problem for many developers. **Getting your head around it takes a shift in thinking.** Here, I'll make a quick rundown of the most important concepts of asynchronous JavaScript so that you can start using it.
+Understanding async in JavaScript is a common problem for many developers. **Getting your head around it takes a shift in thinking.**  But if you want to know what async does, here are the most important concepts of asynchronous JavaScript so that you can start using it.
 
 ## First Things First, What's an Asynchronous Task?
 Normally, tasks in JavaScript are run in a synchronous way. That is, it runs the instructions one by one, and **a given instruction won't be executed until the previous one has finished.**

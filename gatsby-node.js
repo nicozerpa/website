@@ -2,6 +2,7 @@ const {
     createFilePath
 } = require("gatsby-source-filesystem")
 const path = require(`path`)
+const redirects = require("./redirects.json");
 
 exports.onCreateNode = ({
     node,
@@ -38,6 +39,13 @@ exports.createPages = async ({
         toPath: "/",
         isPermanent: true
     });
+
+    for (const { from, to} of redirects) {
+        createRedirect({
+            fromPath: from,
+            toPath: to
+        });
+    }
 
     const result = await graphql(`
     query {
