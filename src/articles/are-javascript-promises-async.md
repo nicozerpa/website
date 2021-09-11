@@ -1,0 +1,30 @@
+---
+title: Are JavaScript Promises Asynchronous?
+id: 20210911
+description: Promises are the center of JavaScript's handling of asynchronus tasks. But promises are not asynchronous themselves. Find out how they really work.
+published: true
+tags: ["async", "promises", "javascript features"]
+includeInSimilar: true
+---
+Promises are the center of JavaScript's handling of asynchronus tasks. But **promises are not asynchronous themselves.** 
+
+They are associated to an asynchronous task and wait for it to finish. When that async
+task is over, they can run some pieces of code, but these are executed synchronously.
+
+Let's see an example:
+
+```javascript
+import axios from "axios";
+
+const getUserPromise = axios("https://fakewebservice.com/getUser/230");
+getUserPromise.then(function(jsonResponse) {
+    console.log(`The name of user #230 is 
+      ${jsonResponse.data.firstName} ${jsonResponse.data.lastName}`);
+});
+```
+
+In this example, the `axios` function (part of the [Axios](https://axios-http.com/) library) performs an asynchronous task: it makes a request to a web service and returns a promise.
+
+Once the call to the web service is complete, the promise will run the function with the `console.log`. However, that function will run synchronously.
+
+If you want to know more about Promises and async, I recommend that you read [this introductory article](/what-does-async-do.md) about the topic.
