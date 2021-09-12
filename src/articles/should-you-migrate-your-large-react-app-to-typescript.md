@@ -8,7 +8,7 @@ tags: ["typescript", "react", "migrate"]
 ---
 For large-scale applications, a big recommendation is to use a static-typed language, like TypeScript. But if your application is already using JavaScript, is it worth migrating?
 
-Doing the migration might take a lot of time and resources, but not doing it can make the project harder to maintain at is grows. What to do?
+Migrating it might take a lot of time and resources, but not doing it can make the project harder to maintain as it grows. What to do?
 
 This is one of those cases in which **there's no one-size-fits-all answer**, it depends. But there are some factors that you have to take into account.
 
