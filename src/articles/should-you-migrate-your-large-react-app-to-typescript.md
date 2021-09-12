@@ -1,0 +1,31 @@
+---
+title: Should you Migrate Your Big React App to TypeScript?
+id: 20210912
+description: ""
+published: false
+includeInSimilar: true
+tags: ["typescript", "react", "migrate"]
+---
+For large-scale applications, a big recommendation is to use a static-typed language, like TypeScript. But if your application is already using JavaScript, is it worth migrating?
+
+Doing the migration might take a lot of time and resources, but not doing it can make the project harder to maintain at is grows. What to do?
+
+This is one of those cases in which **there's no one-size-fits-all answer**, it depends. But there are some factors that you have to take into account.
+
+The first one is that **migrating big applications takes time and resources, and there may be no real benefit in the short term.** The application won't become faster, it won't remove bugs. In fact, the migration process might add bugs to the project.
+
+On the other hand, static typing has big advantages that might help application development and keep the project maintainable. According to [this article from developer Tim Mensch](https://realmensch.org/2017/01/03/static-types-considered-helpful/), static typing has these pros:
+
+> * For developers who don’t have every API they use completely memorized, a static type system can integrate with tools to give you working, reliable autocomplete, telling you what APIs are available, and some IDEs will even show you the docs of each API as you bring it up. **So you can write code more quickly.**
+>
+> * I would estimate somewhere between 60% and 90% of most unit tests for dynamic languages are basically doing the work of a type checker. **So you can write less code.**
+>
+> * When your statically typed code compiles, you can eliminate an entire class of bug. It’s like a suite of unit tests that run the moment you write the code, and they catch the bugs before you even run the tests. In some editors, before you even save. **So you waste less time tracking down bugs.**
+>
+> * Type safety means that refactoring code doesn’t need an elaborate set of unit tests to ensure it will work. Generally, code with well-defined types simply won’t compile until all the parts are reconnected correctly. Some tools offer automated refactoring, so you can, for instance, rename a member variable or a function name without worrying whether other similarly named variables will accidentally be renamed. **So you can purge technical debt more quickly.**
+>
+> * When your tools can “understand” the types, they also know where every reference to every member is, throughout your code base. You want to know where this object’s `init()` function is referenced? Hit a key and you get a list of all of the references to that `init()`. Not the `init()` on these dozen other classes, but that one. **So you can more easily understand the code you’re reading.**
+
+With all those advantages, I'd say that **most large-scale projects will benefit from transitioning** from JavaScript to TypeScript.
+
+Given that TypeScript is a superset of JavaScript, it's possible to migrate parts of the project. That will be very helpful if it's not feasible to migrate it all in one go.
