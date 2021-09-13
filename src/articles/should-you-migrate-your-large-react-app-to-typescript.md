@@ -2,7 +2,7 @@
 title: Should you Migrate Your Big React App to TypeScript?
 id: 20210912
 description: ""
-published: false
+published: true
 includeInSimilar: true
 tags: ["typescript", "react", "migrate"]
 ---
