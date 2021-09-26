@@ -1,7 +1,7 @@
 ---
 title: Should you Migrate Your Big React App to TypeScript?
 id: 20210912
-description: ""
+description: For large-scale applications, a big recommendation is to use a static-typed language, like TypeScript. But if your application is already using JavaScript, is it worth migrating?
 published: true
 includeInSimilar: true
 tags: ["typescript", "react", "migrate"]
