@@ -58,7 +58,7 @@ maxTheDog.bark(); // Prints "This dog is barking"
 ```
 When we called `maxTheDog.sleep()`, the JS engine found it in the `maxTheDog` object itself. But when we called `maxTheDog.bark()`, the engine didn't find it in the object itself, it's not there. But the object has a prototype, and the engine found the method there.
 
-**If you make changes to the prototype, it will also affect all the objects** created from it. For example:
+<a name="fromNewsletter"></a>**If you make changes to the prototype, it will also affect all the objects** created from it. For example:
 ```javascript
 // Let's add a new method to the prototype
 // we created before
