@@ -2,7 +2,7 @@
 title: "How do JavaScript Prototypes Work?"
 id: 20210926
 description: Prototypes in JavaScript is a special topic. You probably won't use them but, it's still important to know how they work it's a core part of the language.
-published: false
+published: true
 tags: ["prototypes", "object", "classes", "beginners"]
 includeInSimilar: true
 ---
