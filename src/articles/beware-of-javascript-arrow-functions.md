@@ -1,0 +1,80 @@
+---
+title: Beware of JavaScript Arrow Functions
+id: 20211010
+description: "Many JS developers use arrow functions by default, but they aren't 100% equivalent to classic functions. Avoid bugs by learning the differences"
+published: false
+tags: ["gotchas", "language features", "this"]
+includeInSimilar: true
+---
+
+Arrow functions are a fantastic addition to JavaScript. However, I've noted that many devs use arrow functions only. They seem to think that it's "the new way" to create functions, while using the `function` keyword is "the old way". 
+
+But that's not correct, **arrow functions aren't 100% equivalent to classic functions.** There are subtle but important differences that can cause big headaches if you aren't aware of them.
+
+**In classic functions, the value of the `this` keyword is dynamic, because it depends on how you call them.**
+
+If you call a function as the method of an object, `this` refers to that object. But if you call a function as a regular function (i.e. not as an object's method), `this` represents the global object (or `undefined` in strict mode.)
+
+```javascript
+myObject.myMethod(); // this == myObject
+myFunction(); // this == global object or undefined
+```
+
+With classic functions, you call them using the `new` keyword. In this case, you'll create an object and `this` will refer to that new object.
+```javascript
+// this == the new object
+const myObject = new ConstructorFunction();
+```
+Also, you can manually **set the value of `this` using the `.bind` method** (functions in JavaScript are objects). It doesn't change the original function, but it returns a new version with the new value for `this`.
+
+```javascript
+const boundFunction = normalFunction.bind({name: "Bob", age: 40});
+normalFunction(); // this == global object or undefined
+boundFunction(); // this == {name: "Bob", age: 40}
+```
+
+You can't do anything of this with arrow functions.
+
+In arrow functions, it's often said that they "have no `this`". **The value of `this` in an arrow function is "inherited" from the context where the function was created.**
+
+It means, if you create an arrow function in the global context (i.e. not inside an object or a function), `this` refers to the global object or `undefined` in strict mode. If you declare an arrow function inside a class, `this` is the instance of the class.
+
+And if you declare an arrow function inside another function, it will have the same `this` as the outer function.
+
+```javascript
+// Declaring an arrow function in the global context
+// this == global object or undefined
+const sayHello1 = () => "Hello";
+
+class MyClass {
+  // Declaring an arrow function in a class
+  // this == object
+  sayHello2 = () => "Hello";
+}
+
+function outerFunction() {
+  
+  // Declaring arrow function inside
+  // another function
+  // this == the same value as in outerFunction
+  const innerFunction = () => "Hello"
+}
+```
+
+And the most important thing, **you can't change the value of `this` in an arrow function.** Even `.bind` fails silently! Calling this method won't throw an error, but it will return a new version of the function... with the same `this` as the original.
+
+```javascript
+// Declaring an arrow function in the global context
+// this == global object or undefined
+const sayHello = () => "Hello";
+sayHello(); // this == global object or undefined
+
+const sayHello2 = sayHello.bind({ name: "Alice", age: 30 });
+sayHello2();  // this == global object or undefined
+```
+
+Another difference occurs when declaring methods inside a class.
+
+If you declare class methods the "standard" way, the same function will be reused among all instances of that class. But if you use arrow functions, every time you create a new instance, a new copy of the function will be created for that instance.
+
+It's important to say it again, arrow functions are a fantastic addition to JavaScript. **If the function body is a simple expression or if you don't want to deal with the `this` keyword, they are very useful.** You just need to know when to use them.
