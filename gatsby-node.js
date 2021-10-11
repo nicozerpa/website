@@ -34,12 +34,6 @@ exports.createPages = async ({
 }) => {
     const { createRedirect, createPage} = actions;
 
-    createRedirect({
-        fromPath: "/newsletter",
-        toPath: "/",
-        isPermanent: true
-    });
-
     for (const { from, to} of redirects) {
         createRedirect({
             fromPath: from,

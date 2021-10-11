@@ -749,3 +749,20 @@ blockquote {
         font-style: italic;
     }
 }
+
+.newsletterPageContainer {
+    position: absolute;
+    left: 0px;
+    top: 2em;
+    width: 100vw;
+    min-height: calc(100vh - 4em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img#nicoZerpaLogo {
+        display: block;
+        margin-bottom: 2em;
+    }
+}
