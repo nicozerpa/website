@@ -2,7 +2,7 @@
 title: Beware of JavaScript Arrow Functions
 id: 20211010
 description: "Many JS developers use arrow functions by default, but they aren't 100% equivalent to classic functions. Avoid bugs by learning the differences"
-published: false
+published: true
 tags: ["gotchas", "language features", "this"]
 includeInSimilar: true
 ---
