@@ -1,5 +1,5 @@
 ---
-title: Promises or async/await, Which Is Better?
+title: Promises or async/await, which is better?
 id: 20210704
 description: "Both approaches tackle a colossal pain in JavaScript: handling asynchronous tasks. But, what's the difference, and when should you use one over the other?"
 published: true

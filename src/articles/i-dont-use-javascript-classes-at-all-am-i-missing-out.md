@@ -1,5 +1,5 @@
 ---
-title: I Don't Use JavaScript Classes At All. Am I Missing Out on Something?
+title: I Don't use JavaScript classes at all. Am I missing out on something?
 id: 20210405
 published: true
 tags: ["classes", "this", "object-oriented programming", "functional programming", "javascript features"]

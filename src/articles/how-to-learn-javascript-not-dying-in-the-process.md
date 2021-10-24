@@ -1,5 +1,5 @@
 ---
-title: How to Learn Modern JavaScript (Not Dying in the Process)
+title: How to learn modern JavaScript (not dying in the process)
 id: 20210321
 description: JavaScript is one of the most popular languages, but it's challenging to learn. If you're a beginner and need help to tackle it, I've got some tips for you.
 published: true

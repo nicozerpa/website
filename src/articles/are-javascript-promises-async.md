@@ -1,5 +1,5 @@
 ---
-title: Are JavaScript Promises Asynchronous?
+title: Are JavaScript promises asynchronous?
 id: 20210911
 description: "Promises are the center of JavaScript's handling of asynchronus tasks. But promises are not asynchronous themselves. Find out how they really work."
 published: true

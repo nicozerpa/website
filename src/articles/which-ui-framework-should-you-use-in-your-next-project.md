@@ -1,5 +1,5 @@
 ---
-title: Which UI Framework Should You Use in Your Next Project?
+title: Which UI framework should you use in your next project?
 id: 20210313
 description: When creating a new front-end project, the question of choosing which framework to use always come to mind. In this article, you'll see how to do it.
 published: true

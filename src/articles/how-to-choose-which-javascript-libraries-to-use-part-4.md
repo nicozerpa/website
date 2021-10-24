@@ -1,5 +1,5 @@
 ---
-title: How To Choose Which JavaScript Libraries To Use (Part 4)
+title: How to choose which JavaScript libraries to use (Part 4)
 id: 20210508
 description: Choosing the right tools is crucial when starting a new JavaScript project. In this four-article series, I'll give you my tips and tactics to make the best choices.
 published: true

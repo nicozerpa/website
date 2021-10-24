@@ -1,5 +1,5 @@
 ---
-title: I'm Using async/await. Why Does My Function Return a Promise?
+title: I'm using async/await. Why does my function return a promise?
 id: 20210516
 description: The async/await patterns make asynchronous tasks way easier, but it has some gotchas. How to solve them?
 published: true

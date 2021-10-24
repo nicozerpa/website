@@ -1,5 +1,5 @@
 ---
-title: "Lodash in 2021: Necessary or Obsolete?"
+title: "Lodash in 2021: necessary or obsolete?"
 id: 20210620
 published: true
 description: JavaScript now has many of the utilities Lodash (and Underscore) used to offer. Are these still necessary, or Am I adding unnecessary bloat into my project?

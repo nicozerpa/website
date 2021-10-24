@@ -1,5 +1,5 @@
 ---
-title: Should You Really Learn Vanilla JavaScript Before React?
+title: Should you really learn vanilla JavaScript before React?
 id: 20210801
 description: They say you should "learn the basics before React", but that's not always right. What really matters are your learning preferences.
 published: true

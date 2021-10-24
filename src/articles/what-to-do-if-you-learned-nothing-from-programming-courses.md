@@ -1,5 +1,5 @@
 ---
-title: What to Do If You Learned Nothing from Programming Courses?
+title: What to do if you learned nothing from programming courses?
 id: 20210829
 description: You found the perfect course, you feel you understand everything, but when you apply what you saw, you realise you learned nothing. But there's a way to get unstuck.
 tags: ["learning", "courses", "tutorial hell", "practice"]

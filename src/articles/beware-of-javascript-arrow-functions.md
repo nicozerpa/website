@@ -1,5 +1,5 @@
 ---
-title: Beware of JavaScript Arrow Functions
+title: Beware of JavaScript arrow functions
 id: 20211010
 description: "Many JS developers use arrow functions by default, but they aren't 100% equivalent to classic functions. Avoid bugs by learning the differences"
 published: true

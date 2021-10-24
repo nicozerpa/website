@@ -1,5 +1,5 @@
 ---
-title: "In 5 Minutes: What Does Async Do in JavaScript?"
+title: "In 5 minutes: What does async do in JavaScript?"
 id: 20210815
 description: Understanding async/await in JavaScript is hard, but here, I'll make a quick explanation so that you can start using it.
 published: true
