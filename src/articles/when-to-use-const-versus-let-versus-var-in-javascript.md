@@ -2,7 +2,7 @@
 title: When to use `const` versus `let` versus `var` in JavaScript?
 id: 20211024
 description: "JavaScript has three ways to declare variables, but that leaves people confused. What's the difference, and which one should you use?"
-published: false
+published: true
 tags: ["javascript features", "best practices", "var", "const", "let"]
 includeInSimilar: true
 ---
