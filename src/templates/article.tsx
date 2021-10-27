@@ -92,7 +92,8 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
                 <meta name="description" content={ post.frontmatter.description }/>
                 <meta property="og:title" content={ post.frontmatter.title }/>
                 <meta property="og:description" content={ post.frontmatter.description }/>
-                <meta property="og:image" content={ `https://nicozerpa.com/smimage/${pageContext.slug.replace(/(^\/|\/$)/g, "")}.webp` }/>
+                <meta property="og:image" content={ `https://nicozerpa.com/smimage/${pageContext.slug.replace(/(^\/|\/$)/g, "")}.png` }/>
+                <meta property="og:type" content="article" />
             </Helmet>
             <article className="single">
                 <h1>{ post.frontmatter.title }</h1>
