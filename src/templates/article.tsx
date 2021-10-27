@@ -89,6 +89,9 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
     return (
         <Layout title={ post.frontmatter.title }>
             <Helmet>
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:site" content="@await_nico" />
+                <meta name="twitter:creator" content="@await_nico" />
                 <meta name="description" content={ post.frontmatter.description }/>
                 <meta property="og:title" content={ post.frontmatter.title }/>
                 <meta property="og:description" content={ post.frontmatter.description }/>
