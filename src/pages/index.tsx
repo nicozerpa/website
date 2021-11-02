@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
                     <li>You&rsquo;re finally <strong>on your way to become a great JS developer 🎉.</strong></li>
                 </ul>
                 
-                <p>The road to master JavaScript may be difficult, but you don&rsquo;t have to do it alone.</p>
+                <p>The road to learning JavaScript may be difficult, but you don&rsquo;t have to do it alone.</p>
 
                 <p>Hola! 👋 My name is Nico, and I&rsquo;ve been creating software in JavaScript for
                     almost 2 decades. <strong>In my newsletter, I help people like you become awesome JavaScript developers.</strong></p>
