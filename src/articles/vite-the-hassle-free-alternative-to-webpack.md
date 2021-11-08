@@ -14,14 +14,14 @@ My favourite aspect of Vite is that **it's fast with a capital F and supports JS
 
 Vite doesn't create itself the bundles. Under the hood, it uses two tools: [Esbuild](https://esbuild.github.io/) while you're developing, and [Rollup.js](https://rollupjs.org/) to create the production bundle.
 
-The recommended way to create a project using Vite is running the command `npm init vite` in the command line.
+The recommended way to create a project using Vite is by running the command `npm init vite` in the command line.
 
 You'll be asked to write the project name and which framework you want to use (if you want to use one). Once the project is created, you run `npm install` to install dependencies and then you can start creating and editing JS and HTML files. 
 
-Like webpack, it has a built-in development server, that you can start with the command `npx vite`. When you need to create the production build, run `npx vite build` and everything will be built in the **/dist/** folder.
+Like Webpack, it has a built-in development server, that you can start with the command `npx vite`. When you need to create the production build, run `npx vite build` and everything will be built in the **/dist/** folder.
 
 **The big drawback is that it doesn't have any tool for Server-Side Rendering (SSR) yet.** They are working on it, but it's still experimental and not recommended for production.
 
 Also, even though Vite can parse TypeScript, it doesn't do the type checking, it just converts it into JavaScript code. You should rely on your IDE/editor to spot type errors.
 
-**If you're project already uses Webpack and you're satisfied with it, there's no reason to migrate to Vite. But if you're creating a new project, I highly recommend to give Vite a try.**
+**If your project already uses Webpack and you're satisfied with it, there's no reason to migrate to Vite. But if you're creating a new project, I highly recommend giving Vite a try.**
