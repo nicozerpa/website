@@ -1,0 +1,68 @@
+---
+title: "Never use Math.random() to create passwords in JavaScript"
+id: 20211121
+description: 
+published: false
+tags: ["random", "security", "best practices"]
+includeInSimilar: true
+---
+Recently, I've seen articles and tweets that show how to build random password generators with JavaScript. These projects are excellent to get some practice, sure. However, **the passwords they create are not secure.**
+
+These password generators rely on the `Math.random()` method, which is not cryptographically secure. It means the pseudo-random number is not really that random, that the random numbers can be predicted and, therefore, **it is possible to guess the generated passwords.**
+
+It's worth pointing out that JavaScript wasn't originally created to build "serious" applications. Its original purpose was to add just some interactivity and visual effects to web pages.
+
+For that reason, when `Math.random()` was designed, nobody thought about making it cryptographically secure. it wasn't seen as necessary back then.
+
+Nowadays, the language has evolved and you can now build complex projects with it, but it still has many traces of its past, and these must be kept for compatibility reasons. 
+
+## How to create secure passwords
+On the front end, **you can use the [`crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)** method to create random numbers that are secure enough. If you're using Node.js, the `crypto` module has the [`randomInt()`](https://nodejs.org/api/crypto.html#cryptorandomintmin-max-callback) method.
+
+Here's a password generator for the front end, using `crypto.getRandomValues()`:
+
+```javascript
+function generatePassword(length = 16)
+{
+    let generatedPassword = "";
+
+    const validChars = "0123456789" +
+        "abcdefghijklmnopqrstuvwxyz" +
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+        ",.-{}+!\"#$%/()=?";
+
+    for (let i = 0; i < length; i++) {
+        let randomNumber = crypto.getRandomValues(new Uint32Array(1))[0];
+        randomNumber = randomNumber / 0x100000000;
+        randomNumber = Math.floor(randomNumber * validChars.length);
+
+        generatedPassword += validChars[randomNumber];
+    }
+
+    return generatedPassword;
+}
+```
+
+And this is another generator for Node.js:
+```javascript
+const util = require("util");
+const crypto = require("crypto");
+
+const randomInt = util.promisify(crypto.randomInt);
+
+async function generatePassword(length = 16)
+{
+    let generatedPassword = "";
+
+    const validChars = "0123456789" +
+        "abcdefghijklmnopqrstuvwxyz" +
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+        ",.-{}+!\"#$%/()=?";
+
+    for (let i = 0; i < length; i++) {
+        generatedPassword += validChars[await randomInt(0, validChars.length)];
+    }
+
+    return generatedPassword;
+}
+```
