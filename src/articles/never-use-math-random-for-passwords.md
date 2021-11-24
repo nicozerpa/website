@@ -2,7 +2,7 @@
 title: "Never use Math.random() to create passwords in JavaScript"
 id: 20211121
 description: 
-published: false
+published: true
 tags: ["random", "security", "best practices"]
 includeInSimilar: true
 ---
