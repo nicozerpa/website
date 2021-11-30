@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import Layout from "../components/layout"
 
 function calculateAge() : number {
@@ -106,7 +106,7 @@ export default function AboutMe() : JSX.Element {
                         programmers (and aspiring programmers too) to understand one of the most important
                         languages of the Internet.</p>
 
-                    <p>Do you want free advice and information about JavaScript? <Link to="/articles/">Check
+                    <p>Do you want free advice and information about JavaScript? <Link href="/articles/">Check
                     out the articles</Link>.</p>
 
                     <p>If you want to contact me, send me an email to <a href="mailto:nico@nicozerpa.com">nico@nicozerpa.com</a>.</p>

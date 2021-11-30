@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import navLinks from "../resources/navbar.js"
 import { Helmet } from "react-helmet"
 
@@ -43,7 +43,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
 
     const navLinksContent : React.ReactNode = navLinks 
             .filter(item => item.in === "all" || item.in === "header")
-            .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
+            .map(item => <Link key={ item.url } href={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
     
     return (
         <div className={className || ""}>
@@ -54,7 +54,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
             </Helmet>
             <div className="contentWidth headerContentWidth">
                 <header>
-                    <Link to="/">
+                    <Link href="/">
                         <img id="nicoZerpaLogo" alt="Nico Zerpa" src="/images/nicozerpa.svg"/>
                     </Link>
                     <nav role="region" aria-label="Top Menu Bar">
@@ -82,7 +82,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                     {
                         navLinks
                             .filter(item => item.in === "all" || item.in === "footer")
-                            .map(item => <Link key={ item.url } to={ item.url }>{ item.label }</Link>)
+                            .map(item => <Link key={ item.url } href={ item.url }>{ item.label }</Link>)
                     }
                 </nav>
                 <div>© { copyrightString } Nico Zerpa. All rights reserved.</div>
