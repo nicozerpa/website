@@ -1,6 +1,5 @@
-import React, { useState } from "react"
-import { Helmet } from "react-helmet"
-import "../styles/codePage.scss"
+import React, { useState, useEffect } from "react";
+import styles from "../styles/codePage.module.scss";
 
 
 function updateCode(setCode : React.Dispatch<React.SetStateAction<string>>, element : HTMLPreElement) {
@@ -14,9 +13,11 @@ function updateCode(setCode : React.Dispatch<React.SetStateAction<string>>, elem
 export default function Code() : JSX.Element {
     const [code, setCode] = useState<string>("")
 
-    return <div className="codePage">
-        <Helmet htmlAttributes={ { id: "codePage" } }/>
+    useEffect(function() {
+        document.documentElement.classList.add(styles.codePageRoot);
+    }, []);
 
+    return <div className={styles.codePage}>
         <pre contentEditable={true} onInput={ (event) => updateCode(setCode, event.target as HTMLPreElement) }></pre>
         <pre>{ code }</pre>
     </div>
