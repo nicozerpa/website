@@ -25,10 +25,9 @@ interface ArticlesProps {
     posts: Post[]
 }
 
+export async function getServerSideProps({ query: { page }}: { query: { page: number}}): Promise<{props: ArticlesProps}> {
 
-export async function getServerSideProps(context): Promise<{props: ArticlesProps}> {
-
-    const currentPage = context.query.page ?? 1 as number;
+    const currentPage = page ?? 1 as number;
     const perPage = 10;
 
     const fs = await import("fs");
