@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
+import Head from "next/head";
 import navLinks from "../resources/navbar.js"
-import { Helmet } from "react-helmet"
 
 interface LayoutProps {
     className ?: string,
@@ -33,25 +33,30 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
             newDarkMode = darkModeFromLocalStorage == "1"
         }
         
-        setDarkMode(newDarkMode)
-    }, [])
+        if (newDarkMode) document.documentElement.classList.add("darkMode");
+        
+        setDarkMode(newDarkMode);
+    }, []);
 
     const toggleDarkMode = function() {
         localStorage.setItem("darkMode", darkMode ? "0" : "1")
-        setDarkMode(!darkMode)
+        setDarkMode(!darkMode);
+
+        if (!darkMode) document.documentElement.classList.add("darkMode");
+        else document.documentElement.classList.remove("darkMode");
     }
 
     const navLinksContent : React.ReactNode = navLinks 
             .filter(item => item.in === "all" || item.in === "header")
             .map(item => <Link key={ item.url } href={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
-    
+    /*<html lang="en" className={ darkMode ? "darkMode" : "" }/>lelele*/
     return (
         <div className={className || ""}>
-            <Helmet htmlAttributes={ {lang: "en", class: darkMode ? "darkMode" : "" } }>
+            <Head>
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
                 <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
                 <link rel="alternate" type="application/rss+xml" title="Nico Zerpa RSS Feed"  href="/rss.xml" />
-            </Helmet>
+            </Head>
             <div className="contentWidth headerContentWidth">
                 <header>
                     <Link href="/">
