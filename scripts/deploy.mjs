@@ -85,7 +85,7 @@ async function main() {
 
         await ssh.connect({
             "host": "direct.nicozerpa.com",
-            "username": "nicolas",
+            "username": "nico",
             "privateKey": `${dirname}/config/${config.sshIdentityFile}`
         })
 
