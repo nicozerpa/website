@@ -91,11 +91,11 @@ async function main() {
 
         await ssh.putFile(
             "nicozerpacom.tar.gz",
-            "/home/nicolas/nicozerpa.com/nicozerpacom.tar.gz"
+            "/home/nico/nicozerpa.com/nicozerpacom.tar.gz"
         )
 
         console.log("4) UNPACKING REMOTE TARBALL");
-        await ssh.execCommand("/home/nicolas/nicozerpa.com/deploy.sh")
+        await ssh.execCommand("/home/nico/nicozerpa.com/deploy.sh")
 
         ssh.dispose()
 
