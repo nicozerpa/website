@@ -3,7 +3,7 @@ title: When should I use asynchronous code in JavaScript?
 id: 20211205
 description: 
 tags: ["async", "best practices"]
-published: false
+published: true
 includeInSimilar: true
 ---
 If you were learning JavaScript for some time, I'm sure that you've heard about asynchronous code. Promises, callbacks, the `async` and `await` keywords, etc. But a question that often gets unanswered is, when should I even use asynchronicity?
