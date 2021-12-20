@@ -1,0 +1,29 @@
+---
+title: You're using too much JavaScript
+id: 20211219
+description: Using a lot of JavaScript can result in worse experience for your users.
+published: false
+tags: ["best practices"]
+includeInSimilar: true
+---
+
+JavaScript Libraries (or frameworks) like React, Angular or Vue.js have been the main protagonists of web development in recent years. While they are all great pieces of software and solve real problems, we've been relying on them too much, and **we've made the web worse as a result.**
+
+The problem is to use too much JavaScript. Of the three core languages on the web (HTML, CSS, and JavaScript), JS might be the most versatile, but it's also **the most expensive for the user, and the most fragile.**
+
+**A big advantage of HTML and CSS is that they are very tolerant to errors.** In many cases, when the browser finds errors in HTML or CSS, it can just ignore them and keep displaying the web page. For example, let's see this HTML snippet:
+
+```html
+My name is <stronk>Nico Zerpa</stronk>
+```
+In this example, I misspelt the tag name (it should be `strong`, not `stronk`). However, when I open the page in a browser, the content will appear just fine. Yes, my name won't appear in bold, but the site won't break.
+
+**JavaScript doesn't work like that, it's less forgiving when an error occurs.** And if most of our websites rely heavily on it, an error might mean that the page doesn't work at all.
+
+Another drawback is that **JavaScript may be slower, especially when the user is using an old or low-range device.** That's especially true when people try to replicate with JavaScript some functionality that HTML can already do on its own (something that sometimes happens on UI frameworks.)
+
+When using large libraries, you also have the problem of load times, making the website even slower.
+
+**However, it doesn't mean that you shouldn't use JavaScript at all.** JavaScript does play an important role in web development.
+
+Every time you add a new JS library or functionality, think first if it will really improve the user experience. Also, look if there's a way to implement what you want to do with HTML and CSS. Quite often, there are JS-free alternatives.
