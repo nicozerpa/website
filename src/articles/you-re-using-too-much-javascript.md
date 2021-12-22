@@ -2,7 +2,7 @@
 title: You're using too much JavaScript
 id: 20211219
 description: Using a lot of JavaScript can result in worse experience for your users.
-published: false
+published: true
 tags: ["best practices"]
 includeInSimilar: true
 ---
