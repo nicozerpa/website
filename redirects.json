@@ -2,5 +2,9 @@
     {
         "from": "/understand-async-await-5-minutes/",
         "to": "/what-does-async-do/"
+    },
+    {
+        "from": "/should-you-learn-jquery-in-2021/",
+        "to": "/should-you-learn-jquery-in-2022/"
     }
 ]
