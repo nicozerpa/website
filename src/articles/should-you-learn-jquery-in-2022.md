@@ -1,6 +1,6 @@
 ---
-title: Should you learn jQuery in 2021?
-id: 20210328
+title: Should you learn jQuery in 2022?
+id: 20220328
 description: It used to be the most popular JS library, is it still worth learning it? 
 published: true
 tags: ["jquery", "library selection", "ecosystem", "keeping up-to-date", "best practices"]
@@ -13,7 +13,7 @@ When jQuery first appeared in 2006, it allowed developers to code only once. The
 
 Not only that, but it also was easier to use than the standard DOM. You could do with jQuery tasks that require complex logic if you used vanilla JS.
 
-However, things have changed. Internet Explorer is no longer with us, and **practically every browser follows the standards to the letter. Also, standards have improved and became simpler**. And that brings the question: is it worth learning jQuery in 2021?
+However, things have changed. Internet Explorer is no longer with us, and **practically every browser follows the standards to the letter. Also, standards have improved and became simpler**. And that brings the question: is it worth learning jQuery in 2022?
 
 It's good to know jQuery and there are still use cases for it. However, **you should not spend a lot of time learning it.** jQuery should not be your focus this year.
 
