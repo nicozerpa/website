@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Layout from "../../components/layout";
-import * as ArticlesService from "../../resources/articles-service";
+import { GetArticlesResult } from "../../resources/article-types";
 
 
-type ArticlesProps = ArticlesService.GetArticlesResult;
+type ArticlesProps = GetArticlesResult;
 
 
 export async function getServerSideProps({ query: { page }}: { query: { page: number}}): Promise<{props: ArticlesProps}> {
+
+    const ArticlesService = await import("../../resources/articles-service");
 
     return {
         props: await ArticlesService.getArticles(page)
