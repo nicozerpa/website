@@ -48,7 +48,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
 
     const navLinksContent : React.ReactNode = navLinks 
             .filter(item => item.in === "all" || item.in === "header")
-            .map(item => <Link key={ item.url } onClick={ event => event.stopPropagation() } href={ item.url }>{ item.label }</Link>)
+            .map(item => <Link key={ item.url } href={ item.url }>{ item.label }</Link>)
     /*<html lang="en" className={ darkMode ? "darkMode" : "" }/>lelele*/
     return (
         <div className={className || ""}>
@@ -64,7 +64,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                     </Link>
                     <nav role="region" aria-label="Top Menu Bar">
                         <button className="mobileMenuButton" type="button">Menu</button>
-                        <div className="mobileMenuContainer">
+                        <div className="mobileMenuContainer" onClick={ event => event.stopPropagation() }>
                             { navLinksContent }
                             
                             <button
