@@ -1,6 +1,6 @@
 ---
 title: Should you learn jQuery in 2022?
-id: 20220328
+id: 20210328
 description: It used to be the most popular JS library, is it still worth learning it? 
 published: true
 tags: ["jquery", "library selection", "ecosystem", "keeping up-to-date", "best practices"]
