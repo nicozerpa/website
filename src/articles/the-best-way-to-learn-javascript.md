@@ -1,7 +1,7 @@
 ---
 title: "What's the best way to learn JavaScript? There isn't any"
 id: 20220103
-published: false
+published: true
 description: "The best thing you can do is just to get started: find a free resource and try it."
 tags: ["beginners", "learning", "mindset"]
 includeInSimilar: true
