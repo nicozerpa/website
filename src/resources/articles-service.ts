@@ -11,6 +11,7 @@ import { TfIdf, TfIdfTerm } from "natural";
 import computeCosineSimilarity from "compute-cosine-similarity";
 
 
+export const perPage = 10;
 
 const getArticlesDir = () => path.join(process.cwd(), "src", "articles");
 
@@ -23,7 +24,22 @@ function parseArticleFile(dirName: string, fileName: string): Article {
     }
 }
 
-export async function getArticles(page = 1, perPage = 10): Promise<GetArticlesResult> {
+export function getAllSlugs(): string[] {
+    const articlesDir = getArticlesDir();
+
+    const output: string[] = [];
+
+    for (const file of fs.readdirSync(articlesDir)) {
+        if (!file.trim().toLowerCase().match(/\.md$/)) continue;
+        
+        output.push(file.trim().toLowerCase().replace(/\.md$/, ""));
+    }
+
+    return output;
+
+}
+
+export async function getArticles(page = 1): Promise<GetArticlesResult> {
     
     const articlesDir = getArticlesDir();
 
@@ -82,6 +98,8 @@ export async function getArticle(slug: string): Promise<Article | null> {
                 .use(codeFigure)
                 .process(article.content)
         );
+
+        article.data.slug = slug;
 
         return article;
     } else {

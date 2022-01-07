@@ -7,15 +7,46 @@ import { GetArticlesResult } from "../../resources/article-types";
 type ArticlesProps = GetArticlesResult;
 
 
-export async function getStaticProps({ query: { page }}: { query: { page: number}}): Promise<{props: ArticlesProps}> {
-
+export async function getStaticProps({ params: { page }}: { params: { page: number[]}}): Promise<{props: ArticlesProps}> {
     const ArticlesService = await import("../../resources/articles-service");
 
     return {
-        props: await ArticlesService.getArticles(page)
+        props: await ArticlesService.getArticles(page ? page[0] : 1)
     }
 }
 
+interface StaticPathsResponse {
+    paths: ({
+        params: {
+            page: string[]
+        }
+    })[],
+    fallback: boolean
+}
+
+export async function getStaticPaths(): Promise<StaticPathsResponse> {
+    const ArticlesService = await import("../../resources/articles-service");
+
+    const pages = Math.ceil(ArticlesService.getAllSlugs().length / ArticlesService.perPage);
+
+    const output: StaticPathsResponse = {
+        paths: [],
+        fallback: false
+    };
+
+    output.paths.push({
+        params: {
+            page: []
+        }
+    });
+    for (let i = 1; i <= pages; i++) {
+        output.paths.push({
+            params: { page: [String(i)] }
+        });
+    }
+
+    return output;
+}
 
 export default function Articles({ pageInfo, articles }: ArticlesProps): JSX.Element {
     

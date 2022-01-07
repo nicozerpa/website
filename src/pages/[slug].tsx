@@ -5,10 +5,11 @@ import highlight from "highlight.js/lib/core";
 import highlightJS from "highlight.js/lib/languages/javascript";
 import Head from "next/head";
 import NewsletterForm from "../components/newsletter-form";
+import Link from "next/link";
 
 
 interface ServerSideProps {
-    query: {
+    params: {
         slug: string
     }
 }
@@ -19,16 +20,43 @@ interface ArticleProps {
     relatedArticles: ArticleTypes.Article[]
 }
 
-export async function getStaticProps({ query: { slug } }: ServerSideProps): Promise<{ props: ArticleProps}> {
+export async function getStaticProps({ params: { slug } }: ServerSideProps): Promise<{ props: ArticleProps}> {
     const ArticlesService = await import("../resources/articles-service");
 
-    return {
+    const article = await ArticlesService.getArticle(slug);
+    const relatedArticles = await ArticlesService.getSimilarArticles(slug);
+
+    const output = {
         props: {
             slug,
-            article: await ArticlesService.getArticle(slug),
-            relatedArticles: await ArticlesService.getSimilarArticles(slug)
+            article,
+            relatedArticles
         }
     }
+
+    return output;
+}
+
+interface StaticPathsResponse {
+    paths: {
+        params: {
+            slug: string
+        }
+    }[],
+    fallback: boolean
+}
+
+export async function getStaticPaths(): Promise<StaticPathsResponse> {
+    const ArticlesService = await import("../resources/articles-service");
+
+    const output = {
+        paths: ArticlesService.getAllSlugs().map(slug => ({
+            params: { slug }
+        })),
+        fallback: false
+    };
+
+    return output;
 }
 
 export default function Article({ slug, article, relatedArticles }: ArticleProps): JSX.Element {
@@ -60,13 +88,12 @@ export default function Article({ slug, article, relatedArticles }: ArticleProps
     let relatedArticlesOutput: JSX.Element;
 
     if (relatedArticles.length > 0) {
-
         relatedArticlesOutput = <section className="relatedArticles textContentWidth">
             <h3>Related Articles</h3>
             <ul> {
                 relatedArticles.map(
                     relatedArticle => <li key={relatedArticle.data.slug}>
-                        <a href={relatedArticle.data.slug}>{relatedArticle.data.title}</a>
+                        <Link href={relatedArticle.data.slug}>{relatedArticle.data.title}</Link>
                     </li>
                     )
             } </ul>
