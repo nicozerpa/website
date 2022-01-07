@@ -32,6 +32,13 @@ export async function getServerSideProps({ query: { slug } }: ServerSideProps): 
 }
 
 export default function Article({ slug, article, relatedArticles }: ArticleProps): JSX.Element {
+
+    if (!article) {
+        return <Head>
+            <meta httpEquiv="refresh" content="0;url=/" />
+        </Head>
+    }
+
     const articleBodyRef = useRef(null);
 
     useEffect(() => highlight.registerLanguage("javascript", highlightJS), []);

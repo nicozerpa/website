@@ -4,6 +4,8 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import strip from "remark-strip-html";
+import codeFigure from "remark-code-figure";
+/* import rehypeSanitize, { defaultSchema } from "rehype-sanitize"; */
 import { Article, Metadata, GetArticlesResult } from "./article-types";
 import { TfIdf, TfIdfTerm } from "natural";
 import computeCosineSimilarity from "compute-cosine-similarity";
@@ -76,7 +78,8 @@ export async function getArticle(slug: string): Promise<Article | null> {
 
         article.content = String(
             await remarkResult
-                .use(html)
+                .use(html, { sanitize: false })
+                .use(codeFigure)
                 .process(article.content)
         );
 
@@ -141,8 +144,6 @@ export async function getSimilarArticles(slug: string): Promise<Article[]> {
             id: file.trim().toLowerCase().replace(/\.md$/, ""),
             text: rawText
         });
-
-        console.log(words);
 
         tfidf.addDocument(words);
 
