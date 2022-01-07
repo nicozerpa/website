@@ -19,7 +19,7 @@ interface ArticleProps {
     relatedArticles: ArticleTypes.Article[]
 }
 
-export async function getServerSideProps({ query: { slug } }: ServerSideProps): Promise<{ props: ArticleProps}> {
+export async function getStaticProps({ query: { slug } }: ServerSideProps): Promise<{ props: ArticleProps}> {
     const ArticlesService = await import("../resources/articles-service");
 
     return {

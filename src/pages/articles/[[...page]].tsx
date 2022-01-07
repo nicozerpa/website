@@ -7,7 +7,7 @@ import { GetArticlesResult } from "../../resources/article-types";
 type ArticlesProps = GetArticlesResult;
 
 
-export async function getServerSideProps({ query: { page }}: { query: { page: number}}): Promise<{props: ArticlesProps}> {
+export async function getStaticProps({ query: { page }}: { query: { page: number}}): Promise<{props: ArticlesProps}> {
 
     const ArticlesService = await import("../../resources/articles-service");
 
