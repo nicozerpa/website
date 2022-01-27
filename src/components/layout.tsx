@@ -6,11 +6,12 @@ import { Helmet } from "react-helmet"
 interface LayoutProps {
     className ?: string,
     title ?: string,
-    children ?: React.ReactNode
+    children ?: React.ReactNode,
+    canonicalPath ?: string
 }
 
 
-export default function Layout({ className, title, children }: LayoutProps) : JSX.Element {
+export default function Layout({ className, title, children, canonicalPath }: LayoutProps) : JSX.Element {
 
     const copyrightYear = 2021;
     const currentYear : number = (new Date()).getFullYear();
@@ -44,6 +45,9 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
     const navLinksContent : React.ReactNode = navLinks 
             .filter(item => item.in === "all" || item.in === "header")
             .map(item => <Link key={ item.url } to={ item.url } onClick={ event => event.stopPropagation() }>{ item.label }</Link>)
+
+
+    const canonicalPathLink = canonicalPath ? <link rel="canonical" href={ `https://nicozerpa.com${canonicalPath}` }/> : null;
     
     return (
         <div className={className || ""}>
@@ -51,6 +55,7 @@ export default function Layout({ className, title, children }: LayoutProps) : JS
                 <title>{ title ? `${title} – ` : ""}Nico Zerpa, Your JavaScript Friend</title>
                 <meta name="description" content="Whether you’re a beginner or advanced, I’ll help you level up your JavaScript skills"/>
                 <link rel="alternate" type="application/rss+xml" title="Nico Zerpa RSS Feed"  href="/rss.xml" />
+                {canonicalPathLink}
             </Helmet>
             <div className="contentWidth headerContentWidth">
                 <header>

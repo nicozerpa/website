@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet";
 
 
 interface ArticlesProps {
@@ -54,6 +55,10 @@ export default function Articles({ data } : ArticlesProps) : JSX.Element {
 
     return (
         <Layout className="articleList" title="Articles">
+            <Helmet>
+                <link rel="canonical" href={ `https://nicozerpa.com/articles${data.articles.pageInfo.currentPage > 1 ? `/${data.articles.pageInfo.currentPage}  ` : '/'}` }/>
+            </Helmet>
+
             <h1>Articles</h1>
             <div className="textContentWidth">
                 { posts.map(post => (

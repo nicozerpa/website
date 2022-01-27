@@ -2,9 +2,9 @@ import React from "react"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 
-export default function Home(): JSX.Element {
+export default function Home({ path } : { path: string }): JSX.Element {
     return (
-        <Layout className="homePage">
+        <Layout className="homePage" canonicalPath={path}>
             <section role="banner" id="heroBanner">
                 <div className="heroContainer">
                     <h1>Free JavaScript Newsletter</h1>

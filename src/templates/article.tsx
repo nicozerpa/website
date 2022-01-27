@@ -97,6 +97,7 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
                 <meta property="og:description" content={ post.frontmatter.description }/>
                 <meta property="og:image" content={ `https://nicozerpa.com/smimage/${pageContext.slug.replace(/(^\/|\/$)/g, "")}.png` }/>
                 <meta property="og:type" content="article" />
+                <link rel="canonical" href={ `https://nicozerpa.com${pageContext.slug}` }/>
             </Helmet>
             <article className="single">
                 <h1>{ post.frontmatter.title }</h1>

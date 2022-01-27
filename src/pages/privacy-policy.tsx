@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 
-export default function PrivacyPolicy() : JSX.Element {
+export default function PrivacyPolicy({ path } : { path: string }) : JSX.Element {
     
     return (
-        <Layout title="Privacy Policy">
+        <Layout title="Privacy Policy" canonicalPath={ path }>
             <article className="single">
                 <h1>Privacy Policy</h1>
 
