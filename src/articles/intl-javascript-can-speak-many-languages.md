@@ -2,7 +2,7 @@
 title: "The Intl object: JavaScript can speak many languages"
 id: 20220116
 description: "JavaScript has a useful yet unknown object to handle formatting dates, numbers, and other values in different languages, the `Intl` object. Find out how it works"
-published: false
+published: true
 tags: ["javascript features", "l10n", "i18n"]
 includeInSimilar: true
 ---
