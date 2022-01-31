@@ -1,0 +1,101 @@
+---
+title: The guide to cloning objects in JavaScript
+id: 20220130
+description: "Copying and cloning objects in JavaScript is tricky, but in this article we show the two ways to do it safely"
+published: false
+tags: ["javascript features"]
+includeInSimilar: true
+---
+Copying and cloning objects in JavaScript is tricky. It's one of those things that look easy, but **can cause unexpected bugs and errors that are difficult to solve** if you don't know well how the language works. 
+
+Let's begin with what doesn't work. If you try to copy an object or an array (remember: arrays are objects in JavaScript) like this:
+
+```javascript
+const originalObject = {
+    name: "Sarah",
+    favouriteFoods: ["chicken", "pizza", "pasta"]
+};
+
+// Attempt to copy an object
+const copyObject = originalObject;
+```
+
+It doesn't really work, because you aren't actually copying anything. If you change something in `copyObject`, that change will also appear in `originalObject`! Look:
+
+```javascript
+// Changing a property in the "copy"
+copyObject.name = "Jon";
+
+// The change is also in the original object
+console.log(originalObject.name);
+// 👆 Outputs "Jon"
+```
+
+Why does this happen? When you create a new object, the JavaScript engine allocates space in the memory and stores the object there.
+
+Then, you get a number, known as the *address*, that indicates the exact location of that object in memory. The JavaScript variable becomes a *reference* to that position in the memory where the object is stored.
+
+When you're using the assignment operator (`=`) to attempt to copy an object, **what you're actually copying is the memory address, not the object itself.** So, you end up with two different variables that refer to the very same object.
+
+## Creating shallow copies
+JavaScript now provides two ways to create copies. One way is to use the spread operator (`...`):
+```javascript
+const copyObject = { ...originalObject };
+```
+
+And another one, popular when the spread operator didn't exist, is to use the `Object.assign` method:
+```javascript
+const originalObject = {
+    name: "Sarah",
+    favouriteFoods: ["chicken", "pizza", "pasta"]
+};
+const copyObject = Object.assign({}, originalObject);
+```
+
+Both approaches work well. You are actually creating a new object this time. Now `copyObject` is, in fact, a different object than `originalObject`:
+```javascript
+// Changing a property in the copy
+copyObject.name = "Alexandria";
+
+// The original object remains unaffected
+console.log(originalObject.name);
+// 👆 Outputs "Sarah"
+```
+But there's a problem when you try to change the favourite food list:
+```javascript
+// Adding a new favourite food to the copy
+copyObject.favouriteFoods.push("sushi");
+
+// The new food was also added to the original!
+console.log(originalObject.favouriteFoods)
+// 👆 Outputs "chicken", "pizza", "pasta", "sushi"
+```
+What happened here was: `originalObject.favouriteFoods` is an array object, and when we created the new `copyObject`, we copied again the memory address of `favouriteFoods`.
+
+Thus, we have two properties: `originalObject.favouriteFoods` and `copyObject.favouriteFoods` that are references to the same object in memory.
+
+**That's why this type of copy is known as a "shallow copy".** If the object only has primitives (i.e. values that aren't objects) they're copied just fine. But it fails if it has nested objects inside.
+
+## Deep copies
+The solution to this problem is creating deep copies. **A deep copy is a copy that also clones nested objects, resulting in an object that is completely separate from the original.** There are a couple of ways to create this kind of copy:
+
+You can convert the object to a JSON expression and then convert it back to an object. That creates an entirely new object, but it doesn't work well if you have some special types of values (e.g. NaN, Infinity, regular expressions, dates, and a couple of others). This is how it works:
+
+```javascript
+const copyObject = JSON.parse(JSON.stringify(originalObject));
+```
+
+Another alternative is using an external library, like lodash's `cloneDeep` method:
+```javascript
+// Install it by using the command "npm i --save lodash.clonedeep"
+import cloneDeep from "lodash.clonedeep";
+const copyObject = cloneDeep(originalObject);
+```
+
+A very new function that is being added to most platforms is `structuredClone`. This function is still not available everywhere, probably you'll have to wait until it's safe to use.
+
+```javascript
+const copyObject = structuredClone(originalObject);
+```
+
+If you handle simple objects and you know it doesn't have any nested objects or arrays, using shallow copies (especially using the spread operator `...`) is OK. But if those objects have more objects inside, it's a better idea to create a deep copy using one of the techniques above.
