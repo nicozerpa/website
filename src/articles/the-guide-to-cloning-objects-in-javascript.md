@@ -2,7 +2,7 @@
 title: The guide to cloning objects in JavaScript
 id: 20220130
 description: "Copying and cloning objects in JavaScript is tricky, but in this article we show the two ways to do it safely"
-published: false
+published: true
 tags: ["javascript features"]
 includeInSimilar: true
 ---
