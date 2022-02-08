@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
 
 function calculateAge() : number {
     const now : Date = new Date();
@@ -25,7 +26,9 @@ type Age = {
 
 const formatter = Intl.NumberFormat("en-US");
 
-export default function AboutMe({ path } : { path: string }) : JSX.Element {
+export default function AboutMe() : JSX.Element {
+
+    const { pathname: pathName } = useLocation();
     
     const [age, setAge] = useState<Age | null>(null);
     const ageSpan = useRef(null);
@@ -73,7 +76,7 @@ export default function AboutMe({ path } : { path: string }) : JSX.Element {
 
 
     return (
-        <Layout title="About Me" canonicalPath={ path }>
+        <Layout title="About Me" canonicalPath={ pathName }>
             <article className="single">
                 <h1>About Me</h1>
 

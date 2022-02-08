@@ -1,10 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
+import { useLocation } from "@reach/router";
 
-export default function Home({ path } : { path: string }): JSX.Element {
+export default function Home(): JSX.Element {
+    const path = useLocation();
+
     return (
-        <Layout className="homePage" canonicalPath={path}>
+        <Layout className="homePage" canonicalPath={path.pathname}>
             <section role="banner" id="heroBanner">
                 <div className="heroContainer">
                     <h1>Free JavaScript Newsletter</h1>

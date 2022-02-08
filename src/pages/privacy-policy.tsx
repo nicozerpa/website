@@ -1,10 +1,13 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
+import { useLocation } from "@reach/router";
 
-export default function PrivacyPolicy({ path } : { path: string }) : JSX.Element {
+export default function PrivacyPolicy() : JSX.Element {
     
+    const { pathname: pathName } = useLocation();
+
     return (
-        <Layout title="Privacy Policy" canonicalPath={ path }>
+        <Layout title="Privacy Policy" canonicalPath={ pathName }>
             <article className="single">
                 <h1>Privacy Policy</h1>
 
