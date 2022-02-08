@@ -21,7 +21,7 @@ const navbar = [
     },
     {
         label: "RSS",
-        url: "rss.xml",
+        url: "/rss.xml",
         in: "footer"
     }
 ];
