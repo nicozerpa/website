@@ -83,11 +83,16 @@ async function main() {
         console.log("3) SENDING TARBALL");
         const ssh = new NodeSSH()
 
-        await ssh.connect({
+        const sshParams = {
             "host": "direct.nicozerpa.com",
-            "username": "nico",
-            "privateKey": `${dirname}/config/${config.sshIdentityFile}`
-        })
+            "username": "nico"
+        };
+        if (config.sshIdentityFile) {
+            sshParams.privateKey = `${dirname}/config/${config.sshIdentityFile}`;
+        } else if (config.sshPassword) {
+            sshParams.password = config.sshPassword;
+        }
+        await ssh.connect(sshParams)
 
         await ssh.putFile(
             "nicozerpacom.tar.gz",
