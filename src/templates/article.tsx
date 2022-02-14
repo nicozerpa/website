@@ -23,7 +23,9 @@ interface ArticleProps {
 interface ArticleData {
     frontmatter: {
         title: string,
-        description: string
+        description: string,
+        id: number,
+        lastUpdated: number
     },
     html: string
 }
@@ -86,6 +88,23 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
         relatedArticlesOutput = null;
     }
 
+
+    const year = Math.floor(post.frontmatter.lastUpdated / 10000);
+    const month = Math.floor((post.frontmatter.lastUpdated - year * 10000) / 100);
+    const day = post.frontmatter.lastUpdated - year * 10000 - month * 100;
+    
+    const isoDate = `${year}-${month < 10 ? "0" : ""}${month}-${day < 10 ? "0" : ""}${day}`;
+
+    const usFriendlyDate = new Date(year, month - 1, day, 12, 0).toLocaleDateString(
+        "en-US",
+        {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }
+    );
+    
+
     return (
         <Layout title={ post.frontmatter.title }>
             <Helmet>
@@ -100,7 +119,14 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
                 <link rel="canonical" href={ `https://nicozerpa.com${pageContext.slug}` }/>
             </Helmet>
             <article className="single">
-                <h1>{ post.frontmatter.title }</h1>
+                <div className="articleHeader">
+                    <h1>{ post.frontmatter.title }</h1>
+                    <div className="articleCreatedAt">
+                        { post.frontmatter.id === post.frontmatter.lastUpdated ? "Published" : "Last updated"}
+                        {" at "}
+                        <time dateTime={ isoDate }>{ usFriendlyDate }</time>
+                    </div>
+                </div>
                 <div
                     ref={ articleBodyRef }
                     className="textContentWidth"
@@ -116,10 +142,12 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
 export const query = graphql`
 query BlogQuery($slug: String!, $relatedFileAbsolutePaths: [String!]!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
-            html
-            frontmatter {
+        html
+        frontmatter {
             title
             description
+            id
+            lastUpdated
         }
     }
     relatedPosts: allMarkdownRemark(
