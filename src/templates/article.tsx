@@ -123,7 +123,7 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
                     <h1>{ post.frontmatter.title }</h1>
                     <div className="articleCreatedAt">
                         { post.frontmatter.id === post.frontmatter.lastUpdated ? "Published" : "Last updated"}
-                        {" at "}
+                        {" on "}
                         <time dateTime={ isoDate }>{ usFriendlyDate }</time>
                     </div>
                 </div>
