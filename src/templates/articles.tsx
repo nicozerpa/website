@@ -63,7 +63,7 @@ export default function Articles({ data } : ArticlesProps) : JSX.Element {
             <div className="textContentWidth">
                 { posts.map(post => (
                     <article key={ post.frontmatter.id }>
-                        <h2><Link to={ post.fields.slug }>{ post.frontmatter.title }</Link></h2>
+                        <h2><Link to={ post.fields.slug.replace(/\/\d+\./, "/") }>{ post.frontmatter.title }</Link></h2>
                         <p>{ post.excerpt }</p>
                     </article>
                 ))}

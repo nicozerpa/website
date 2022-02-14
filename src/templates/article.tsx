@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import NewsletterForm from "../components/newsletter-form"
 import { Helmet } from "react-helmet"
@@ -77,7 +77,7 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
             <ul> {
                 sortedRelatedPosts.map(
                     node => <li key={node.fields.slug}>
-                        <a href={node.fields.slug}>{node.frontmatter.title}</a>
+                        <Link to={node.fields.slug.replace(/\/\d+?\./, "/")}>{node.frontmatter.title}</Link>
                     </li>
                     )
             } </ul>

@@ -58,7 +58,7 @@ exports.createPages = async ({
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-            path: node.fields.slug,
+            path: node.fields.slug.replace(/^\/\d+?\./, "/"),
             component: path.resolve("./src/templates/article.tsx"),
             context: {
                 slug: node.fields.slug,
