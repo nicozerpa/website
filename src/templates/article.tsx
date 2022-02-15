@@ -114,9 +114,9 @@ export default function Article({ data: { markdownRemark: post, relatedPosts }, 
                 <meta name="description" content={ post.frontmatter.description }/>
                 <meta property="og:title" content={ post.frontmatter.title }/>
                 <meta property="og:description" content={ post.frontmatter.description }/>
-                <meta property="og:image" content={ `https://nicozerpa.com/smimage/${pageContext.slug.replace(/^\d+\./, "").replace(/(^\/|\/$)/g, "")}.png` }/>
+                <meta property="og:image" content={ `https://nicozerpa.com/smimage/${pageContext.slug.replace(/^\/\d+\./, "/").replace(/(^\/|\/$)/g, "")}.png` }/>
                 <meta property="og:type" content="article" />
-                <link rel="canonical" href={ `https://nicozerpa.com${pageContext.slug.replace(/^\d+\./, "")}` }/>
+                <link rel="canonical" href={ `https://nicozerpa.com${pageContext.slug.replace(/^\/\d+\./, "/")}` }/>
             </Helmet>
             <article className="single">
                 <div className="articleHeader">
