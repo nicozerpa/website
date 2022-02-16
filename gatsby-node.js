@@ -65,6 +65,14 @@ exports.createPages = async ({
                 relatedFileAbsolutePaths: node.fields.relatedFileAbsolutePaths
             },
         })
+
+        if (node.fields.slug.substr(1, 8) <= "20220130") {
+            createRedirect({
+                fromPath: node.fields.slug,
+                toPath: node.fields.slug.replace(/^\/\d+?\./, "/"),
+                isPermanent: true
+            });
+        }
     })
     
 
